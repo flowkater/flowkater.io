@@ -3,11 +3,17 @@ async function loadGoogleFont(
   text: string,
   weight: number,
   subset?: string
-): Promise<ArrayBuffer> {
+): Promise<ArrayBuffer | null> {
   const params = new URLSearchParams({
     family: `${font}:wght@${weight}`,
-    text,
   });
+
+  // Only ask for specific text when running locally to reduce payload.
+  // In non-network environments (e.g. CI/CD) this can cause missing glyphs,
+  // so we skip it to let Google serve the full font subset.
+  if (typeof process !== "undefined" && process.env.NETWORK_FETCH === "true") {
+    params.set("text", text);
+  }
 
   if (subset) {
     params.append("subset", subset);
@@ -15,14 +21,23 @@ async function loadGoogleFont(
 
   const API = `https://fonts.googleapis.com/css2?${params.toString()}`;
 
-  const css = await (
-    await fetch(API, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1",
-      },
-    })
-  ).text();
+  let css: string;
+  try {
+    css = await (
+      await fetch(API, {
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1",
+        },
+      })
+    ).text();
+  } catch (error) {
+    console.warn(
+      `Failed to request Google Fonts CSS for ${font}@${weight}:`,
+      error
+    );
+    return null;
+  }
 
   const resource = css.match(
     /src: url\((.+?)\) format\('(opentype|truetype)'\)/
@@ -30,13 +45,21 @@ async function loadGoogleFont(
 
   if (!resource) throw new Error("Failed to download dynamic font");
 
-  const res = await fetch(resource[1]);
+  try {
+    const res = await fetch(resource[1]);
 
-  if (!res.ok) {
-    throw new Error("Failed to download dynamic font. Status: " + res.status);
+    if (!res.ok) {
+      throw new Error("Failed to download dynamic font. Status: " + res.status);
+    }
+
+    return res.arrayBuffer();
+  } catch (error) {
+    console.warn(
+      `Failed to download font file for ${font}@${weight}:`,
+      error
+    );
+    return null;
   }
-
-  return res.arrayBuffer();
 }
 
 async function loadGoogleFonts(
@@ -78,11 +101,17 @@ const fontsConfig = [
   const fonts = await Promise.all(
     fontsConfig.map(async ({ name, font, weight, style, subset }) => {
       const data = await loadGoogleFont(font, text, weight, subset);
+      if (!data) return null;
       return { name, data, weight, style };
     })
   );
 
-  return fonts;
+  return fonts.filter(Boolean) as Array<{
+    name: string;
+    data: ArrayBuffer;
+    weight: number;
+    style: string;
+  }>;
 }
 
 export default loadGoogleFonts;

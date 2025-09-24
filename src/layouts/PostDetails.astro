@@ -334,6 +334,86 @@ const nextPost =
   }
   addHeadingLinks();
 
+  /** Render Mermaid diagrams when code fences use ```mermaid */
+  function initializeMermaid() {
+    const mermaidBlocks = Array.from(
+      document.querySelectorAll("pre[data-language='mermaid']")
+    );
+
+    if (!mermaidBlocks.length) {
+      return;
+    }
+
+    for (const pre of mermaidBlocks) {
+      if (!(pre instanceof HTMLElement)) {
+        continue;
+      }
+      const source = pre.querySelector("code")?.textContent?.trim();
+      if (!source) {
+        continue;
+      }
+
+      const container = document.createElement("div");
+      container.className = "mermaid";
+      container.textContent = source;
+      pre.replaceWith(container);
+    }
+
+    const renderDiagrams = async () => {
+      if (!window.mermaid) {
+        return;
+      }
+      try {
+        window.mermaid.initialize({ startOnLoad: false });
+        const nodes = Array.from(document.querySelectorAll(".mermaid"));
+        let index = 0;
+        for (const node of nodes) {
+          if (!(node instanceof HTMLElement)) {
+            continue;
+          }
+          const definition = node.textContent ?? "";
+          if (!definition.trim()) {
+            continue;
+          }
+          const id = `mermaid-${Date.now()}-${index++}`;
+          try {
+            const { svg } = await window.mermaid.render(id, definition);
+            node.innerHTML = svg;
+          } catch (error) {
+            console.error("Mermaid render failed", error);
+          }
+        }
+      } catch (error) {
+        console.error("Mermaid render failed", error);
+      }
+    };
+
+    if (window.mermaid) {
+      renderDiagrams();
+      return;
+    }
+
+    let script = document.querySelector("script[data-mermaid-loader]");
+    if (script instanceof HTMLScriptElement) {
+      script.addEventListener("load", () => {
+        void renderDiagrams();
+      }, { once: true });
+      return;
+    }
+
+    script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js";
+    script.async = true;
+    script.dataset.mermaidLoader = "true";
+    script.addEventListener("load", () => {
+      void renderDiagrams();
+    }, { once: true });
+
+    document.head.appendChild(script);
+  }
+  initializeMermaid();
+  document.addEventListener("astro:after-swap", initializeMermaid);
+
   /** Attaches copy buttons to code blocks in the document,
    * allowing users to copy code easily. */
   function attachCopyButtons() {
@@ -341,6 +421,9 @@ const nextPost =
     const codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     for (const codeBlock of codeBlocks) {
+      if (codeBlock.dataset.language === "mermaid") {
+        continue;
+      }
       const wrapper = document.createElement("div");
       wrapper.style.position = "relative";
 
