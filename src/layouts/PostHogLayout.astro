@@ -1,11 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import PostHog from "@/components/posthog.astro";
+import GoogleAnalytics from "@/components/google-analytics.astro";
 
 const layoutProps = Astro.props;
 ---
 
 <Layout {...layoutProps}>
+  <GoogleAnalytics slot="head" />
   <PostHog slot="head" />
   <slot />
 </Layout>

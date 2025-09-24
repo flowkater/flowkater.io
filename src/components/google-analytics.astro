@@ -1,0 +1,33 @@
+---
+const measurementId = "G-F9CRSLNLL8";
+---
+
+{measurementId && (
+  <>
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+    />
+    <script is:inline>
+      {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', '${measurementId}', { send_page_view: false });
+
+function trackAstroPageView() {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('config', '${measurementId}', {
+    page_path: window.location.pathname + window.location.search,
+    page_location: window.location.href,
+  });
+}
+
+document.addEventListener('astro:page-load', trackAstroPageView, {
+  passive: true,
+});
+
+trackAstroPageView();`}
+    </script>
+  </>
+)}

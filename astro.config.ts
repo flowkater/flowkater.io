@@ -54,7 +54,7 @@ export default defineConfig({
         access: "public",
         context: "client",
         optional: true,
-      }),
+      })
     },
   },
   experimental: {
