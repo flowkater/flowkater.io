@@ -1,12 +1,11 @@
 ---
-import PostHog from "../components/posthog.astro";
+import Layout from "@/layouts/Layout.astro";
+import PostHog from "@/components/posthog.astro";
+
+const layoutProps = Astro.props;
 ---
 
-<html>
-  <head>
-    <PostHog />
-  </head>
-  <body>
-    <slot />
-  </body>
-</html>
+<Layout {...layoutProps}>
+  <PostHog slot="head" />
+  <slot />
+</Layout>
