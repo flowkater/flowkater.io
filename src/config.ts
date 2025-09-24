@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://flowkater.io",
   desc: "Dev retros & notes by Tony",
   title: "Flowkater.io",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "desk-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 6,
   postPerPage: 10,
