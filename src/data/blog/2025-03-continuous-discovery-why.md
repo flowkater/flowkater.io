@@ -91,7 +91,7 @@ draft: false
 
 #### Continuous Discovery 의 실무적 정의 (Working Definition)
 
-- 이미 많은 제품 팀에서 [린 고객 개발을 위한 고객 인터뷰 기본 질문 5가지](../book/%E1%84%85%E1%85%B5%E1%86%AB%20%E1%84%80%E1%85%A9%E1%84%80%E1%85%A2%E1%86%A8%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A9%E1%84%80%E1%85%A2%E1%86%A8%20%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%87%E1%85%B2%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%205%E1%84%80%E1%85%A1%E1%84%8C%E1%85%B5.md), 고객 인터뷰, 사용자 테스트, A/B 테스트 를 채택하고 있다.
+- 이미 많은 제품 팀에서 [린 고객 개발을 위한 고객 인터뷰 기본 질문 5가지](/posts/2019-12-lean-customer-questions), 고객 인터뷰, 사용자 테스트, A/B 테스트 를 채택하고 있다.
 
 - 그러나, 이러한 Discovery 활동들을 **체계적이고 지속 가능한 방식**으로 채택하여 제품 결정에 지속적으로 반영하는 팀은 드물다 (고객의 의견을)
 
@@ -108,4 +108,4 @@ draft: false
 
 ---
 
-[2. A Common Framework For Continuous Discovery](2.%20A%20Common%20Framework%20For%20Continuous%20Discovery.md)
+[2. A Common Framework For Continuous Discovery](/posts/2025-03-continuous-discovery-framework)

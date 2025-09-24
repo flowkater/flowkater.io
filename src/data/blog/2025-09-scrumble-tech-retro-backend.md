@@ -14,7 +14,7 @@ draft: false
 > AI 시대에 잃어가는 인간적 연결을 업무 환경에서 되찾자.
 > **Scrumble**은 팀원 간의 감정적 유대와 상호 지지를 형성하는 daily scrum 기반 팀 커뮤니케이션 플랫폼입니다.
 
-이게 초기에 프로젝트 방향성이다. 기술 외적인 프로젝트에 대한 자세한 사항은 [Scrumble 프로젝트 회고 (2025년 6월~8월)](../retrospect/Scrumble%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%9A%8C%EA%B3%A0%20%282025%EB%85%84%206%EC%9B%94~8%EC%9B%94%29.md)에서 읽어보면 된다.
+이게 초기에 프로젝트 방향성이다. 기술 외적인 프로젝트에 대한 자세한 사항은 [Scrumble 프로젝트 회고 (2025년 6월~8월)](/posts/2025-09-scrumble-project-retro)에서 읽어보면 된다.
 
 여러가지 요구사항이 있었는데, 기본적으로 구현된 기능은 다음과 같다.
 
@@ -261,7 +261,7 @@ flowchart TD
 #### CQRS (Query Repository 위주/SQLC)
 
 CQRS 패턴이라고 해서 Query DB까지 분리하는 정도는 아니었고 앞서 얘기했던 Entgo 의 쿼리 성능 이슈로 raw query 에 가까운 SQLC 를 도입하여 Query Repository 를 나누었고, Query Repository 는 Domain 인터페이스를 생략하고 읽기 전용으로 Application 에서 바로 Repository 를 찔러서 Application 레이어 구조체를 반환해오는 형태로 구성했다. 나는 DDD가 개인적으로 Command 에 잘맞는 설계라고 생각하고 있으며 대부분 Endpoint 또는 화면에서 요구하는 특정 값들은 도메인 구조체의 구조화된 설계보다는 직관적으로 그리고 성능적으로 DB 쿼리를 날려 화면에서 요구하는 값을 바로 보내는게 Query 인터페이스에 더 맞다고 생각한다.
-물론 Entgo 때문에 어쩔수없이 도입했고, 초기 프로젝트에서 무슨 CQRS 까지 가냐고 말하겠지만, 앞서 [Scrumble 프로젝트 회고 (2025년 6월~8월)](../retrospect/Scrumble%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%9A%8C%EA%B3%A0%20%282025%EB%85%84%206%EC%9B%94~8%EC%9B%94%29.md)의 목적을 살리고자 그냥 무식하게 하고 싶은 거 다 해보자 하는 심정으로 진행했다.
+물론 Entgo 때문에 어쩔수없이 도입했고, 초기 프로젝트에서 무슨 CQRS 까지 가냐고 말하겠지만, 앞서 [Scrumble 프로젝트 회고 (2025년 6월~8월)](/posts/2025-09-scrumble-project-retro)의 목적을 살리고자 그냥 무식하게 하고 싶은 거 다 해보자 하는 심정으로 진행했다.
 그리고 SNS 가 우리가 매일 사용하다 보니 쉽게 보이는데 이러한 서비스 특성상 생각보다 생각해야하는 성능상 이슈들이 꽤 있어서 조금 더 화면에 맞게 직관적으로 API Endpoint 를 구성하는게 나쁜 판단은 아니었다고 생각한다. Entgo 로 몇번씩 쿼리 날라가던게 SQLC 로 raw sql 로 아주 깔끔하게 Join 해버리니 아주 빨라졌다.
 Entgo 에서도 raw sql 쓸 수 있지만, 생각보다 post, reaction, comment, mediafile 등의 여러 테이블을 조인하는 상황에서 raw sql을 타입 세이프하게 구현하고 객체 매핑하는게 까다로웠고 SQLC 는 sql 파일 작성 후 go 파일을 generate 하여 type safe 하게 매핑을 시켜버려서 성능도 챙기고 타입도 챙기는 식으로 안전하게 개발할 수 있었다.
 
@@ -349,5 +349,4 @@ Golang 쓰면서 한가지 아쉬운 점은 함수형 프로그래밍인 것 같
 ---
 
 - 이전 글
-  - [Scrumble 기술 회고 (부제 - 풀스택 개발과 바이브 코딩의 실패. Golang 과 Nextjs) - 0. 들어가며](Scrumble%20%EA%B8%B0%EC%88%A0%20%ED%9A%8C%EA%B3%A0%20%28%EB%B6%80%EC%A0%9C%20-%20%ED%92%80%EC%8A%A4%ED%83%9D%20%EA%B0%9C%EB%B0%9C%EA%B3%BC%20%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EC%BD%94%EB%94%A9%EC%9D%98%20%EC%8B%A4%ED%8C%A8.%20Golang%20%EA%B3%BC%20Nextjs%29%20-%200.%20%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0.md)
-- ## 다음 글
+  - [Scrumble 기술 회고 (부제 - 풀스택 개발과 바이브 코딩의 실패. Golang 과 Nextjs) - 0. 들어가며](/posts/2025-09-scrumble-tech-retro-intro)

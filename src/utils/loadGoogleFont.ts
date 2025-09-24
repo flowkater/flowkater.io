@@ -1,9 +1,19 @@
 async function loadGoogleFont(
   font: string,
   text: string,
-  weight: number
+  weight: number,
+  subset?: string
 ): Promise<ArrayBuffer> {
-  const API = `https://fonts.googleapis.com/css2?family=${font}:wght@${weight}&text=${encodeURIComponent(text)}`;
+  const params = new URLSearchParams({
+    family: `${font}:wght@${weight}`,
+    text,
+  });
+
+  if (subset) {
+    params.append("subset", subset);
+  }
+
+  const API = `https://fonts.googleapis.com/css2?${params.toString()}`;
 
   const css = await (
     await fetch(API, {
@@ -34,24 +44,40 @@ async function loadGoogleFonts(
 ): Promise<
   Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
 > {
-  const fontsConfig = [
-    {
-      name: "IBM Plex Mono",
-      font: "IBM+Plex+Mono",
-      weight: 400,
-      style: "normal",
-    },
-    {
-      name: "IBM Plex Mono",
-      font: "IBM+Plex+Mono",
-      weight: 700,
-      style: "bold",
-    },
-  ];
+const fontsConfig = [
+  {
+    name: "IBM Plex Mono",
+    font: "IBM+Plex+Mono",
+    weight: 400,
+    style: "normal",
+    subset: "latin",
+  },
+  {
+    name: "IBM Plex Mono",
+    font: "IBM+Plex+Mono",
+    weight: 700,
+    style: "bold",
+    subset: "latin",
+  },
+  {
+    name: "Noto Sans KR",
+    font: "Noto+Sans+KR",
+    weight: 500,
+    style: "normal",
+    subset: "korean",
+  },
+  {
+    name: "Noto Sans KR",
+    font: "Noto+Sans+KR",
+    weight: 700,
+    style: "bold",
+    subset: "korean",
+  },
+];
 
   const fonts = await Promise.all(
-    fontsConfig.map(async ({ name, font, weight, style }) => {
-      const data = await loadGoogleFont(font, text, weight);
+    fontsConfig.map(async ({ name, font, weight, style, subset }) => {
+      const data = await loadGoogleFont(font, text, weight, subset);
       return { name, data, weight, style };
     })
   );

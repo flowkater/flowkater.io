@@ -212,5 +212,5 @@ draft: false
 
 ---
 
-[1. The What And Why Of Continuous Discovery](1.%20The%20What%20And%20Why%20Of%20Continuous%20Discovery.md)
-[3. Focusing On Outcomes Over Outputs](3.%20Focusing%20On%20Outcomes%20Over%20Outputs.md)
+[1. The What And Why Of Continuous Discovery](/posts/2025-03-continuous-discovery-why)
+[3. Focusing On Outcomes Over Outputs](/posts/2025-03-continuous-discovery-outcomes)

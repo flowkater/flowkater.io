@@ -223,4 +223,4 @@ _기술 회고에서 계속_
 - 이전 회고
   - [4년간의 IHFB 회고](https://flowkater.io/Blog/retrospect/4%EB%85%84%EA%B0%84%EC%9D%98+IHFB+%ED%9A%8C%EA%B3%A0)
 - 다음 회고
-  - [Scrumble 기술 회고 (부제 - 풀스택 개발과 바이브 코딩의 실패. Golang 과 Nextjs) - 0. 들어가며](../project/Scrumble%20%EA%B8%B0%EC%88%A0%20%ED%9A%8C%EA%B3%A0%20%28%EB%B6%80%EC%A0%9C%20-%20%ED%92%80%EC%8A%A4%ED%83%9D%20%EA%B0%9C%EB%B0%9C%EA%B3%BC%20%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EC%BD%94%EB%94%A9%EC%9D%98%20%EC%8B%A4%ED%8C%A8.%20Golang%20%EA%B3%BC%20Nextjs%29%20-%200.%20%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0.md)
+  - [Scrumble 기술 회고 (부제 - 풀스택 개발과 바이브 코딩의 실패. Golang 과 Nextjs) - 0. 들어가며](/posts/2025-09-scrumble-tech-retro-intro)
