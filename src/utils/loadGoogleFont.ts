@@ -1,9 +1,27 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+
+async function loadLocalFont(filepath: string): Promise<Uint8Array | null> {
+  try {
+    const absolutePath = path.isAbsolute(filepath)
+      ? filepath
+      : path.join(process.cwd(), filepath);
+    const data = await fs.readFile(absolutePath);
+    return new Uint8Array(
+      data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength)
+    );
+  } catch (error) {
+    console.warn(`Failed to load local font at ${filepath}:`, error);
+    return null;
+  }
+}
+
 async function loadGoogleFont(
   font: string,
   text: string,
   weight: number,
   subset?: string
-): Promise<ArrayBuffer | null> {
+): Promise<Uint8Array | null> {
   const params = new URLSearchParams({
     family: `${font}:wght@${weight}`,
   });
@@ -40,10 +58,13 @@ async function loadGoogleFont(
   }
 
   const resource = css.match(
-    /src: url\((.+?)\) format\('(opentype|truetype)'\)/
+    /src:\s*url\((.+?)\)\s*format\('(opentype|truetype|woff2|woff)'\)/
   );
 
-  if (!resource) throw new Error("Failed to download dynamic font");
+  if (!resource) {
+    console.warn(`Failed to locate font source for ${font}@${weight}`);
+    return null;
+  }
 
   try {
     const res = await fetch(resource[1]);
@@ -52,7 +73,8 @@ async function loadGoogleFont(
       throw new Error("Failed to download dynamic font. Status: " + res.status);
     }
 
-    return res.arrayBuffer();
+    const arrayBuffer = await res.arrayBuffer();
+    return new Uint8Array(arrayBuffer);
   } catch (error) {
     console.warn(
       `Failed to download font file for ${font}@${weight}:`,
@@ -65,42 +87,55 @@ async function loadGoogleFont(
 async function loadGoogleFonts(
   text: string
 ): Promise<
-  Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
+  Array<{ name: string; data: Uint8Array; weight: number; style: string }>
 > {
-const fontsConfig = [
-  {
-    name: "IBM Plex Mono",
-    font: "IBM+Plex+Mono",
-    weight: 400,
-    style: "normal",
-    subset: "latin",
-  },
-  {
-    name: "IBM Plex Mono",
-    font: "IBM+Plex+Mono",
-    weight: 700,
-    style: "bold",
-    subset: "latin",
-  },
-  {
-    name: "Noto Sans KR",
-    font: "Noto+Sans+KR",
-    weight: 500,
-    style: "normal",
-    subset: "korean",
-  },
-  {
-    name: "Noto Sans KR",
-    font: "Noto+Sans+KR",
-    weight: 700,
-    style: "bold",
-    subset: "korean",
-  },
-];
+  const fontsConfig = [
+    {
+      name: "IBM Plex Mono",
+      font: "IBM+Plex+Mono",
+      weight: 400,
+      style: "normal",
+      subset: "latin",
+      src: "public/fonts/IBMPlexMono-Regular.ttf",
+    },
+    {
+      name: "IBM Plex Mono",
+      font: "IBM+Plex+Mono",
+      weight: 700,
+      style: "bold",
+      subset: "latin",
+      src: "public/fonts/IBMPlexMono-Bold.ttf",
+    },
+    {
+      name: "Noto Sans KR",
+      font: "Noto+Sans+KR",
+      weight: 500,
+      style: "normal",
+      subset: "korean",
+      src: "public/fonts/NotoSansKR-Medium.ttf",
+    },
+    {
+      name: "Noto Sans KR",
+      font: "Noto+Sans+KR",
+      weight: 700,
+      style: "bold",
+      subset: "korean",
+      src: "public/fonts/NotoSansKR-Bold.ttf",
+    },
+  ];
 
   const fonts = await Promise.all(
-    fontsConfig.map(async ({ name, font, weight, style, subset }) => {
-      const data = await loadGoogleFont(font, text, weight, subset);
+    fontsConfig.map(async ({ name, font, weight, style, subset, src }) => {
+      let data: Uint8Array | null = null;
+
+      if (src) {
+        data = await loadLocalFont(src);
+      }
+
+      if (!data) {
+        data = await loadGoogleFont(font, text, weight, subset);
+      }
+
       if (!data) return null;
       return { name, data, weight, style };
     })
@@ -108,7 +143,7 @@ const fontsConfig = [
 
   return fonts.filter(Boolean) as Array<{
     name: string;
-    data: ArrayBuffer;
+    data: Uint8Array;
     weight: number;
     style: string;
   }>;
