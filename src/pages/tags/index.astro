@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Main from "@/layouts/Main.astro";
-import Layout from "@/layouts/Layout.astro";
+import PostHogLayout from "@/layouts/PostHogLayout.astro";
 import Tag from "@/components/Tag.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
@@ -13,7 +13,7 @@ const posts = await getCollection("blog");
 let tags = getUniqueTags(posts);
 ---
 
-<Layout title={`Tags | ${SITE.title}`}>
+<PostHogLayout>
   <Header />
   <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
     <ul>
@@ -21,4 +21,4 @@ let tags = getUniqueTags(posts);
     </ul>
   </Main>
   <Footer />
-</Layout>
+</PostHogLayout>
