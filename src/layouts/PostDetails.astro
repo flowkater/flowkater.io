@@ -26,6 +26,7 @@ const {
   title,
   author,
   description,
+  summary: summaryFromFrontmatter,
   ogImage: initOgImage,
   canonicalURL,
   pubDatetime,
@@ -51,21 +52,91 @@ if (!ogImageUrl && SITE.dynamicOgImage) {
   ogImageUrl = `${getPath(post.id, post.filePath)}/index.png`;
 }
 
+const summary = summaryFromFrontmatter ?? description;
+
 // Resolve OG image URL (or fallback to SITE.ogImage / default `og.png`)
 const ogImage = ogImageUrl
   ? new URL(ogImageUrl, Astro.url.origin).href
-  : undefined;
+  : SITE.ogImage
+    ? new URL(`/${SITE.ogImage}`, Astro.url.origin).href
+    : new URL("/og.png", Astro.url.origin).href;
+
+const postUrl = new URL(getPath(post.id, post.filePath), SITE.website).href;
+
+const articleStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: `${title}`,
+  description: summary,
+  image: ogImage,
+  datePublished: pubDatetime?.toISOString(),
+  ...(modDatetime && { dateModified: modDatetime.toISOString() }),
+  author: [
+    {
+      "@type": "Person",
+      name: `${author}`,
+      ...(SITE.profile && { url: SITE.profile }),
+    },
+  ],
+  publisher: {
+    "@type": "Organization",
+    name: SITE.title,
+    url: SITE.website,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE.website}/favicon.svg`,
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": postUrl,
+  },
+};
+
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: SITE.title,
+      item: SITE.website,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: `${SITE.website}/posts/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: title,
+      item: postUrl,
+    },
+  ],
+};
 
 const layoutProps = {
   title: `${title} | ${SITE.title}`,
   author,
   description,
+  summary,
   pubDatetime,
   modDatetime,
   canonicalURL,
   ogImage,
   scrollSmooth: true,
+  structuredData: articleStructuredData,
 };
+
+const relatedPosts = posts
+  .filter(({ id }) => id !== post.id)
+  .filter(({ data }) =>
+    Array.isArray(data.tags) && data.tags.some(tag => tags.includes(tag))
+  )
+  .slice(0, 3);
 
 /* ========== Prev/Next Posts ========== */
 
@@ -83,6 +154,12 @@ const nextPost =
 ---
 
 <Layout {...layoutProps}>
+  <script
+    slot="head"
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(breadcrumbStructuredData)}
+  />
   <Header />
   <BackButton />
   <main
@@ -124,6 +201,33 @@ const nextPost =
     <ul class="mt-4 mb-8 sm:my-8">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
     </ul>
+
+    {
+      relatedPosts.length > 0 && (
+        <section class="my-10" aria-labelledby="related-posts-heading">
+          <h2 id="related-posts-heading" class="mb-4 text-xl font-semibold">
+            Related Posts
+          </h2>
+          <ul class="space-y-3">
+            {relatedPosts.map(rel => (
+              <li>
+                <a
+                  href={getPath(rel.id, rel.filePath)}
+                  class="group flex flex-col gap-1 rounded-md border border-border px-4 py-3 transition-colors hover:border-accent/60 hover:bg-accent/5"
+                >
+                  <span class="font-medium text-accent group-hover:underline">
+                    {rel.data.title}
+                  </span>
+                  <span class="text-sm text-foreground/70">
+                    {rel.data.summary ?? rel.data.description}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
     <BackToTopButton />
 

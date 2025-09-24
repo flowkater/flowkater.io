@@ -1,6 +1,7 @@
 ---
 title: "3. Focusing On Outcomes Over Outputs"
 description: "결과 중심 사고로 전환하는 방법을 바탕으로 비즈니스·제품·트랙션 지표 차이, 리더와 팀의 목표 협상, SMART·학습 목표 활용 시 주의점을 정리했다."
+summary: "결과 중심 사고로 전환하는 방법을 바탕으로 비즈니스·제품·트랙션 지표 차이, 리더와 팀의 목표 협상, SMART·학습 목표 활용 시 주의점을 정리했다. Intro tails.com 리텐션 개선 과제 서비스 초기 90일간의 고객 유지율이 장기 유지율을 결정하는 중요 지표라는 것을 발견..."
 pubDatetime: 2025-03-03T09:00:00+09:00
 updatedDatetime: 2025-03-03T09:00:00+09:00
 tags: ["product"]

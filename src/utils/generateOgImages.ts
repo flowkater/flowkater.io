@@ -1,3 +1,4 @@
+import { readFile } from "node:fs/promises";
 import { Resvg } from "@resvg/resvg-js";
 import { type CollectionEntry } from "astro:content";
 import postOgImage from "./og-templates/post";
@@ -10,11 +11,26 @@ function svgBufferToPngBuffer(svg: string) {
 }
 
 export async function generateOgImageForPost(post: CollectionEntry<"blog">) {
-  const svg = await postOgImage(post);
-  return svgBufferToPngBuffer(svg);
+  try {
+    const svg = await postOgImage(post);
+    return svgBufferToPngBuffer(svg);
+  } catch (error) {
+    console.error("Failed to generate post OG image", error);
+    return getFallbackOgImageBuffer();
+  }
 }
 
 export async function generateOgImageForSite() {
-  const svg = await siteOgImage();
-  return svgBufferToPngBuffer(svg);
+  try {
+    const svg = await siteOgImage();
+    return svgBufferToPngBuffer(svg);
+  } catch (error) {
+    console.error("Failed to generate site OG image", error);
+    return getFallbackOgImageBuffer();
+  }
+}
+
+async function getFallbackOgImageBuffer() {
+  const fallbackPath = new URL("../../public/og.png", import.meta.url);
+  return readFile(fallbackPath);
 }

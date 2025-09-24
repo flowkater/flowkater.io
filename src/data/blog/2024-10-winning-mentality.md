@@ -1,6 +1,7 @@
 ---
 title: "팀에 Winning Mentality를 불어넣는 리더십 스킬"
 description: "토스 SLASH 24 세션을 요약하며 One Team 구축법, 감정 존중, 자율 목표 설정 등 Winning Mentality를 심는 리더십 스킬을 내 맥락으로 해석했다."
+summary: "토스 SLASH 24 세션을 요약하며 One Team 구축법, 감정 존중, 자율 목표 설정 등 Winning Mentality를 심는 리더십 스킬을 내 맥락으로 해석했다. 토스 | SLASH 24 팀에 Winning Mentality를 불어넣는 리더십 스킬 정리 Leadership..."
 pubDatetime: 2024-10-14T18:01:00+09:00
 updatedDatetime: 2024-10-14T18:01:00+09:00
 tags: ["etc"]

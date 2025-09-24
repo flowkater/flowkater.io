@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
+import { SOCIALS } from "@/constants";
 import "@/styles/global.css";
 
 export interface Props {
@@ -9,11 +10,13 @@ export interface Props {
   author?: string;
   profile?: string;
   description?: string;
+  summary?: string;
   ogImage?: string;
   canonicalURL?: string;
   pubDatetime?: Date;
   modDatetime?: Date | null;
   scrollSmooth?: boolean;
+  structuredData?: Record<string, unknown>;
 }
 
 const {
@@ -21,21 +24,25 @@ const {
   author = SITE.author,
   profile = SITE.profile,
   description = SITE.desc,
+  summary,
   ogImage = SITE.ogImage ? `/${SITE.ogImage}` : "/og.png",
   canonicalURL = new URL(Astro.url.pathname, Astro.url),
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
+  structuredData: structuredDataOverride,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.url);
+const metaDescription = summary ?? description;
 
-const structuredData = {
+const baseStructuredData = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": pubDatetime ? "BlogPosting" : "WebPage",
   headline: `${title}`,
+  description: metaDescription,
   image: `${socialImageURL}`,
-  datePublished: `${pubDatetime?.toISOString()}`,
+  ...(pubDatetime && { datePublished: `${pubDatetime.toISOString()}` }),
   ...(modDatetime && { dateModified: modDatetime.toISOString() }),
   author: [
     {
@@ -44,6 +51,37 @@ const structuredData = {
       ...(profile && { url: profile }),
     },
   ],
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `${canonicalURL}`,
+  },
+};
+
+const structuredData = structuredDataOverride ?? baseStructuredData;
+
+const webSiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.title,
+  url: SITE.website,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE.website}/search?query={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const sameAsLinks = SOCIALS.map(({ href }) => href).filter(href =>
+  href.startsWith("http")
+);
+
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.title,
+  url: SITE.website,
+  logo: `${SITE.website}/favicon.svg`,
+  ...(sameAsLinks.length && { sameAs: sameAsLinks }),
 };
 ---
 
@@ -63,13 +101,13 @@ const structuredData = {
     <!-- General Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <meta name="author" content={author} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
 
@@ -95,7 +133,7 @@ const structuredData = {
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    <meta property="twitter:description" content={metaDescription} />
     <meta property="twitter:image" content={socialImageURL} />
 
     <!-- Google JSON-LD Structured data -->
@@ -103,6 +141,16 @@ const structuredData = {
       type="application/ld+json"
       is:inline
       set:html={JSON.stringify(structuredData)}
+    />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(webSiteStructuredData)}
+    />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(organizationStructuredData)}
     />
 
     <!-- Enable RSS feed auto-discovery  -->

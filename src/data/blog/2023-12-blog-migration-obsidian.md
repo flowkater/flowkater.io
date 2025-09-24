@@ -3,6 +3,7 @@ title: "블로그 이전 (Gatsbyjs -> Obsidian Publish)"
 pubDatetime: 2023-12-31T23:40:00+09:00
 updatedDatetime: 2023-12-31T23:40:00+09:00
 description: "Obsidian Publish로 블로그를 이전하며 폴더 구조 이식, 이미지 교체, 도메인 설정, GA 연결 과정을 정리하고 기록 습관을 되살리려는 다짐을 남겼다."
+summary: "Obsidian Publish로 블로그를 이전하며 폴더 구조 이식, 이미지 교체, 도메인 설정, GA 연결 과정을 정리하고 기록 습관을 되살리려는 다짐을 남겼다. 요즈음 업무 할 때나 개인적으로 정리할 때도 Obsidian 을 많이 사용하는데, publish 서비스가 있어서 한번 여기로..."
 tags: ["misc"]
 draft: false
 ---
