@@ -178,3 +178,50 @@ Licensed under the MIT License, Copyright © 2025
 ---
 
 Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+
+## ✍️ Decap CMS 없이 글 작성 (한국어)
+
+1. **글 위치**
+   - 프로젝트에 따라 `src/content/blog/` 또는 `src/data/blog/` 중 존재하는 폴더가 글 폴더입니다. 해당 위치에 마크다운 파일을 추가하세요.
+
+2. **새 글 만들기 (수동)**
+   - 파일명은 영어 슬러그에 날짜 프리픽스를 붙이는 형식을 권장합니다. 예: `2025-09-24-scrumble-backend-retro.md`
+   - 아래 프론트매터 템플릿과 본문을 작성합니다.
+
+```md
+---
+title: "Scrumble 백엔드 회고"
+description: "Go + Next.js 전환에서 배운 점과 다음 액션"
+pubDatetime: 2025-09-24T09:00:00+09:00
+updatedDatetime: 2025-09-24T22:00:00+09:00
+tags: ["회고","scrumble","golang"]
+featured: false
+draft: false
+slug: "scrumble-backend-retro"
+ogImage: "/assets/og/retro-backend.png"
+---
+여기에 본문을 작성합니다.
+```
+
+3. **이미지 넣기**
+   - 정적 자산은 `public/` 아래에 두며, 예: `public/assets/uploads/retro-backend.png`
+   - 본문에서는 `![](/assets/uploads/retro-backend.png)`처럼 경로를 `/assets/...`로 지정합니다.
+
+4. **로컬 미리보기**
+   - 개발 서버: `pnpm dev`
+   - 프로덕션 프리뷰: `pnpm build && pnpm astro preview`
+
+5. **Obsidian에서 가져온 글 붙이기**
+   - Obsidian에서 export한 `.md` 파일을 글 폴더에 복사합니다.
+   - 이미지와 첨부 파일은 `public/assets/uploads/`로 옮기고, 본문 경로를 `/assets/uploads/...`로 교체합니다.
+   - 프론트매터에 `title`, `pubDatetime`, `draft` 등 필요한 최소 필드를 추가합니다.
+
+6. **스크립트로 새 글 생성**
+   - `scripts/new-post.mjs`를 통해 템플릿 파일을 자동 생성할 수 있습니다. (`package.json`의 `new:post` 스크립트 사용)
+   - 사용법: `pnpm run new:post "Scrumble 백엔드 회고"`
+   - 실행하면 `src/content/blog/` 또는 `src/data/blog/` 중 존재하는 폴더에 `YYYY-MM-DD-슬러그.md` 파일을 드래프트 상태로 생성합니다.
+
+7. **체크리스트**
+   - 글이 보이지 않으면 `draft: true`인지 확인하세요.
+   - 스타일/이미지 404가 나면 경로가 `/assets/...`인지, 파일이 `public/` 아래 있는지 점검하세요.
+   - Featured 섹션은 `featured: true` 글만 노출됩니다.
