@@ -1,6 +1,21 @@
 @import "tailwindcss";
 @import "./typography.css";
 
+/* 글폭 넓히기(롱폼 회고 가독성) */
+@utility max-w-app {
+  @apply max-w-4xl xl:max-w-5xl; /* 기본 3xl → 4~5xl */
+}
+
+/* 한글 본문 가독성 */
+:root {
+  --font-sans: "Pretendard Variable","Pretendard","Noto Sans KR",
+               system-ui, Segoe UI, Roboto, Apple SD Gothic Neo, sans-serif;
+}
+html { font-family: var(--font-sans); line-height: 1.75; }
+.markdown :where(h1,h2,h3){ line-height: 1.3; }
+
+/* base */
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root,
