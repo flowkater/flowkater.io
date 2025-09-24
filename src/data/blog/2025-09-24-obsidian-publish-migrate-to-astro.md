@@ -30,7 +30,8 @@ Obsidian 은 개인 위키와 작성을 위해 굉장히 좋은 툴이고 제텔
 - Astro
 - CloudFlare Pages
 - Github (+giscus 댓글)
-- Decap CMS (아직 적용X)
+- Decap CMS (아직 적용X. headless cms 에디팅 경험이 과연 좋을까? 그냥 마크다운 에디터로 작성하고 변환하는게 더 좋지 않을까)
+- Google Analytics / Posthog (써보고 싶었는데 이번 기회에..)
 
 요즈음 스레드도 조금씩 하고 있는데, 회고가 아닌 글들, 내 머릿 속에 계속 떠다니는 생각들을 꾸준히 끄적여보고 싶다.
 
