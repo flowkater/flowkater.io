@@ -1,5 +1,5 @@
 ---
-title: "Scrumble 기술 회고 (부제 - 풀스택 개발과 바이브 코딩의 실패. Golang 과 Nextjs) - 0. 들어가며"
+title: "Scrumble 기술 회고 - 0. 들어가며 (Why Golang?)"
 description: "Scrumble 기술 회고 시리즈를 여는 글로 Golang·Next.js 선택 배경, 바이브 코딩의 한계, 백엔드·프런트엔드·LLM 챕터 로드맵과 독자가 기대할 포인트를 정리했다."
 summary: "Scrumble 기술 회고 시리즈의 서문으로, Golang·Next.js 조합을 선택한 배경과 바이브 코딩이 준 도움과 한계, 이후 편에서 다룰 백엔드·프런트엔드·LLM 챕터를 어떻게 이어갈지 로드맵을 제시하는 방향 소개 글이다. 독자가 무엇을 기대하면 좋을지와 읽는 순서를 명확히..."
 pubDatetime: 2025-09-21T09:00:00+09:00

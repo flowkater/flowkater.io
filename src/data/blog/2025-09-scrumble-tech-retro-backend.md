@@ -1,5 +1,5 @@
 ---
-title: "Scrumble 기술 회고 (부제 - 풀스택 개발과 바이브 코딩의 실패. Golang 과 Nextjs) - 1. 백엔드"
+title: "Scrumble 기술 회고 - 1. 백엔드 (Golang, DDD, Entgo, Event, Centrifugo)"
 description: "Scrumble 백엔드를 Go·Fiber·Entgo·Centrifugo로 구성하며 도메인 모델 설계, 실시간 피드 인프라, 캐시 전략, 테스트·배포 파이프라인을 정리한 기술 회고."
 summary: "Scrumble 백엔드를 Go와 Fiber, Entgo, Centrifugo로 구축하면서 도메인 모델을 정의하고, 실시간 피드를 위한 인프라와 캐시 전략을 설계하고, 테스트·배포 파이프라인을 안정화하기까지의 기술적 고민을 깊게 다룬 회고다. 마이그레이션 전략과 장애 대응 기록, 차후..."
 pubDatetime: 2025-09-22T09:00:00+09:00
@@ -9,7 +9,7 @@ featured: true
 draft: false
 ---
 
-# 백엔드 기술 회고
+# Scrumble 백엔드 기술 회고
 
 > AI 시대에 잃어가는 인간적 연결을 업무 환경에서 되찾자.
 > **Scrumble**은 팀원 간의 감정적 유대와 상호 지지를 형성하는 daily scrum 기반 팀 커뮤니케이션 플랫폼입니다.
@@ -313,7 +313,7 @@ graph TD
 
 원래 프로젝트의 목적 중 하나였던 "감 좀 살려보자"의 관점에서 감을 제대로 살릴 수 있는 경험이 되었고, 이제 프로덕션 릴리즈를 목표로 하는 현재 프로젝트에서 조금 더 깔끔하고 명확한 아키텍처 기반에서 현재 구현 작업을 하고 있다. 정리를 하면,
 
-#### Keep
+### Keep
 
 - DDD/Clean Architecture 에서 CQRS, 이벤트 드리븐까지. 중요한건 모든 레이어에 포트를 두고 확실한 분리를 할 것. 분리를 해야 도메인 구현의 자유도 올라간다. (그리고 전부 도메인 참조)
   - 물론 이중 코드 발생하는 부분에서 트레이드 오프 발생
@@ -321,7 +321,7 @@ graph TD
 - Redis 캐싱 다루기
 - 좀 더 명확해진 테스트 코드 전략
 
-#### Problem
+### Problem
 
 - ORM 을 충분히 검토하지 못하고 선택 (Entgo). 덕분에 복잡해진 설계 구조 (+CRQS, SQLC)
 - Entgo 를 사용한 마이그레이션 (Code First)
@@ -329,7 +329,7 @@ graph TD
 - 바이브 코딩으로 잘못 생산된 코드들 정리 못함
 - Centrifugo 나 기타 솔루션 도입시 개발 단계에서 리서치 미흡 (해당 개발이 다 끝나고 프로덕션 릴리즈때 버전 이슈 알게되어 시간 비용을 많이 지출)
 
-#### Try
+### Try
 
 - 마이그레이션은 Code First 보다 Schema First 로
 - 장기적으로 프로덕션 배포 인프라 변경 필요
