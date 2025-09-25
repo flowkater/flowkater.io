@@ -1,6 +1,6 @@
 ---
 title: "React Typescript Setup Tutorial 1. Apollo 세팅하기 (작성 중..)"
-description: "프론트엔드 프로젝트를 위해 자주 사용하는 기본 개발 환경 구축 Typescript, Apollo, Styled Components 를 이용한 React 튜토리얼"
+description: "React TypeScript 프로젝트에서 Apollo Client와 Styled Components를 한 번에 세팅하는 방법과 의존성, 폴더 구조, 기본 샘플 코드를 정리한 튜토리얼."
 summary: "프론트엔드 프로젝트를 위해 자주 사용하는 기본 개발 환경 구축 Typescript, Apollo, Styled Components 를 이용한 React 튜토리얼 기본 개발 환경 구축 s create react app sample client typescript ````s yarn add..."
 pubDatetime: 2019-11-22T16:11:59+09:00
 updatedDatetime: 2019-11-22T16:11:59+09:00

@@ -8,8 +8,9 @@ const measurementId = "G-F9CRSLNLL8";
       async
       src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
     />
-    <script is:inline>
-      {`window.dataLayer = window.dataLayer || [];
+    <script
+      is:inline
+      set:html={`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
@@ -28,6 +29,6 @@ document.addEventListener('astro:page-load', trackAstroPageView, {
 });
 
 trackAstroPageView();`}
-    </script>
+    />
   </>
 )}

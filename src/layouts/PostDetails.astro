@@ -54,6 +54,27 @@ if (!ogImageUrl && SITE.dynamicOgImage) {
 
 const summary = summaryFromFrontmatter ?? description;
 
+const keywordsList =
+  Array.isArray(post.data.keywords) && post.data.keywords.length
+    ? post.data.keywords
+    : tags;
+const keywordString = keywordsList.filter(Boolean).join(", ");
+const articleSection = tags[0] ?? "blog";
+const inLanguage = SITE.lang ?? "ko";
+const postBodyCandidate = (post as { body?: unknown }).body;
+const rawBody = typeof postBodyCandidate === "string" ? postBodyCandidate : "";
+const sanitizedBody = rawBody
+  .replace(/```[\s\S]*?```/g, " ")
+  .replace(/`[^`]*`/g, " ")
+  .replace(/<[^>]+>/g, " ")
+  .replace(/\s+/g, " ");
+const wordCount = sanitizedBody.trim().length
+  ? sanitizedBody.trim().split(/\s+/).filter(Boolean).length
+  : 0;
+const estimatedReadingTime = wordCount
+  ? Math.max(1, Math.round(wordCount / 200))
+  : null;
+
 // Resolve OG image URL (or fallback to SITE.ogImage / default `og.png`)
 const ogImage = ogImageUrl
   ? new URL(ogImageUrl, Astro.url.origin).href
@@ -69,8 +90,25 @@ const articleStructuredData = {
   headline: `${title}`,
   description: summary,
   image: ogImage,
+  url: postUrl,
   datePublished: pubDatetime?.toISOString(),
   ...(modDatetime && { dateModified: modDatetime.toISOString() }),
+  ...(keywordString && { keywords: keywordString }),
+  articleSection,
+  inLanguage,
+  isAccessibleForFree: true,
+  ...(wordCount ? { wordCount } : {}),
+  ...(estimatedReadingTime ? { timeRequired: `PT${estimatedReadingTime}M` } : {}),
+  ...(keywordsList.length
+    ? {
+        about: keywordsList
+          .filter(Boolean)
+          .map((name: string) => ({
+            "@type": "Thing",
+            name,
+          })),
+      }
+    : {}),
   author: [
     {
       "@type": "Person",
@@ -86,6 +124,11 @@ const articleStructuredData = {
       "@type": "ImageObject",
       url: `${SITE.website}/favicon.svg`,
     },
+  },
+  isPartOf: {
+    "@type": "Blog",
+    name: SITE.title,
+    url: `${SITE.website}/posts/`,
   },
   mainEntityOfPage: {
     "@type": "WebPage",
@@ -131,12 +174,19 @@ const layoutProps = {
   structuredData: articleStructuredData,
 };
 
-const relatedPosts = posts
+const relatedByTag = posts
   .filter(({ id }) => id !== post.id)
   .filter(({ data }) =>
     Array.isArray(data.tags) && data.tags.some(tag => tags.includes(tag))
   )
   .slice(0, 3);
+
+const relatedFallback = posts
+  .filter(({ id }) => id !== post.id)
+  .filter(candidate => !relatedByTag.some(rel => rel.id === candidate.id))
+  .slice(0, Math.max(0, 3 - relatedByTag.length));
+
+const relatedPosts = [...relatedByTag, ...relatedFallback];
 
 /* ========== Prev/Next Posts ========== */
 
@@ -160,6 +210,14 @@ const nextPost =
     is:inline
     set:html={JSON.stringify(breadcrumbStructuredData)}
   />
+  {keywordString && (
+    <meta slot="head" name="keywords" content={keywordString} />
+  )}
+  <meta slot="head" property="article:section" content={articleSection} />
+  {keywordsList.length > 0 &&
+    keywordsList.filter(Boolean).map((tag: string) => (
+      <meta slot="head" property="article:tag" content={tag} />
+    ))}
   <Header />
   <BackButton />
   <main
@@ -206,13 +264,14 @@ const nextPost =
       relatedPosts.length > 0 && (
         <section class="my-10" aria-labelledby="related-posts-heading">
           <h2 id="related-posts-heading" class="mb-4 text-xl font-semibold">
-            Related Posts
+            함께 읽으면 좋은 글
           </h2>
           <ul class="space-y-3">
             {relatedPosts.map(rel => (
               <li>
                 <a
                   href={getPath(rel.id, rel.filePath)}
+                  aria-label={`${title} 관련 글: ${rel.data.title}`}
                   class="group flex flex-col gap-1 rounded-md border border-border px-4 py-3 transition-colors hover:border-accent/60 hover:bg-accent/5"
                 >
                   <span class="font-medium text-accent group-hover:underline">
