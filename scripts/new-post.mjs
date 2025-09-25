@@ -41,6 +41,7 @@ const fm = `---\n` +
   `canonicalURL: "${canonicalURL}"\n` +
   `tags:\n` +
   `  - "others"\n` +
+  `# ogImage: "/assets/og/sample.png" # (선택) 커스텀 OG 이미지 경로. 사용하지 않으면 이 줄을 삭제하세요.\n` +
   `featured: false\n` +
   `draft: true\n` +
   `slug: "${slug}"\n` +

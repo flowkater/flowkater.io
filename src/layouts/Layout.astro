@@ -12,6 +12,8 @@ export interface Props {
   description?: string;
   summary?: string;
   ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
   canonicalURL?: string;
   pubDatetime?: Date;
   modDatetime?: Date | null;
@@ -26,6 +28,8 @@ const {
   description = SITE.desc,
   summary,
   ogImage = SITE.ogImage ? `/${SITE.ogImage}` : "/og.png",
+  ogTitle: ogTitleOverride,
+  ogDescription: ogDescriptionOverride,
   canonicalURL = new URL(Astro.url.pathname, Astro.url),
   pubDatetime,
   modDatetime,
@@ -35,6 +39,9 @@ const {
 
 const socialImageURL = new URL(ogImage, Astro.url);
 const metaDescription = summary ?? description;
+
+const ogTitle = ogTitleOverride ?? title;
+const ogDescription = ogDescriptionOverride ?? description;
 
 const baseStructuredData = {
   "@context": "https://schema.org",
@@ -106,8 +113,8 @@ const organizationStructuredData = {
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={metaDescription} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
 
@@ -132,8 +139,8 @@ const organizationStructuredData = {
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={metaDescription} />
+    <meta property="twitter:title" content={ogTitle} />
+    <meta property="twitter:description" content={ogDescription} />
     <meta property="twitter:image" content={socialImageURL} />
 
     <!-- Google JSON-LD Structured data -->
