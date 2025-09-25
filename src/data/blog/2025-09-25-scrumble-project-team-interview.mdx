@@ -1,0 +1,219 @@
+---
+title: "Scrumble 팀 1차 릴리즈 인터뷰"
+description: "Scrumble 1차 릴리즈 직후 토니·엘리·조지가 프로젝트 합류 계기, 시행착오, 워크샵 소회, 다음 목표를 공유한 인터뷰."
+summary: "토니, 엘리, 조지가 Scrumble 1차 릴리즈에서 느낀 기대와 어려움, 워크샵 뒷이야기, 서로에게 전한 감사와 다짐을 정리했다. 팀 컬처를 키워온 3개월의 온도와 속도를 담은 인터뷰다."
+pubDatetime: 2025-09-25T18:52:55+09:00
+modDatetime: 2025-09-26T09:00:00+09:00
+updatedDatetime: 2025-09-26T09:00:00+09:00
+canonicalURL: "https://flowkater.io/posts/2025-09-25-scrumble-project-team-interview/"
+tags:
+  - "scrumble"
+  - "인터뷰"
+  - "팀문화"
+  - "회고"
+featured: false
+draft: true
+slug: "scrumble-project-team-interview"
+keywords:
+  - "Scrumble 인터뷰"
+  - "사이드 프로젝트 팀 인터뷰"
+  - "스크럼 문화 회고"
+  - "원격 협업 릴리즈"
+timezone: "Asia/Seoul"
+---
+
+import InterviewCard from "@/components/InterviewCard.astro";
+
+Scrumble 1차 릴리즈를 마친 직후, 토니·엘리·조지가 프로젝트 합류 배경부터 워크샵 뒷이야기까지 솔직하게 풀어놓았다. 프로젝트 전반의 흐름은 [Scrumble 프로젝트 회고 (2025년 6월~8월)](/posts/2025-09-scrumble-project-retro/)에서 정리되어 있다면, 이 글은 팀원 각자의 시선과 감정선을 담아낸 인터뷰 기록이다.
+
+---
+
+## Q1. 어떻게 합류했고 어떤 기대를 품었나요?
+
+<InterviewCard variant="tony" name="토니" avatar="/assets/Tony.png">
+<p>오랫동안 개발에서 멀어져 있다 보니 다시 불을 붙일 프로젝트가 필요했어요. 매일 내가 쓰고 장기적으로 개선할 수 있는 도구라면 좋겠다는 생각에, 이전 회사에서 매일 작성하던 데일리 미팅 노트의 아이디어를 꺼내왔죠. 체크인과 체크아웃, 업무 공유를 통해 팀 커뮤니케이션을 부드럽게 만들고 싶었습니다.</p>
+<p>Scrumble에서는 백엔드와 프런트엔드를 다시 End to End로 개발하며 감을 되살리고, 온전한 프로덕트를 릴리즈하는 것이 목표였어요.</p>
+</InterviewCard>
+
+<InterviewCard variant="ellie" name="엘리" avatar="/assets/Ellie.png">
+<p>저도 토니처럼 오랜 시간 디자인 일을 쉬고 있었어요. ‘뭐라도 다시 해보자’ 싶던 찰나에 Scrumble 제안을 받았죠.</p>
+<p>개인적으로 데일리 미팅 경험이 긍정적이었어요. 저는 팀 관계를 부드럽게 만들어 주는 ‘소프트 터치’를 중요하게 생각하는 편이라, 이 프로젝트가 가진 문제의식을 들었을 때 호기심이 확 치솟았습니다. 초반엔 “MVP에 집중하자”로 시작했지만, 어느새 B2B 영업까지 상상하며 폭주하기도 했죠. 다행히 다시 본래 목적에 맞춰 기대치를 재정립했습니다.</p>
+<p>언젠가는 메신저와 SNS의 경계에서 방향을 선택해야 할 시점이 올 것 같아요. 그 순간에도 친밀함과 스트레스 사이에서 균형 잡힌 소통을 지켜 가길 기대합니다.</p>
+</InterviewCard>
+
+<InterviewCard variant="george" name="조지" avatar="/assets/George.png">
+<p>학원과 스터디를 통해 공부하긴 했지만, 현업과는 차이가 컸어요. 회사를 입사하고 나서도 ‘이게 내가 꿈꾸던 방식인가?’라는 고민이 계속됐죠. 한동안은 일이 없어 눈치만 보며 시간을 보내기도 했습니다.</p>
+<p>“뭔가 제대로 해보고 싶다”는 마음이 강했어요. 좋은 기회를 받아 팀에 합류했고, 늦었지만 현업에서 필요한 커뮤니케이션과 협업 능력을 찬찬히 익히고 싶었습니다.</p>
+</InterviewCard>
+
+## Q2. 진행하면서 가장 힘들었던 순간은 무엇이었나요?
+
+<InterviewCard variant="tony" name="토니" avatar="/assets/Tony.png">
+<p>마무리 직전에 API 설계 이슈가 터져서 전부 마이그레이션해야 했고, 릴리즈에 필요한 작업들이 눈덩이처럼 쌓였습니다. 속도를 못 내고 계속 미루다 보니 답답함이 컸죠.</p>
+<p>초기에 tiptap 에디터를 붙였다가 기능이 과하다고 느껴 롤백했는데, 그 판단이 가장 아쉬웠어요. 뒤로 갈수록 더 많은 기능과 데이터가 얽혀서 결국 다시 붙이는 데 훨씬 많은 시간을 썼거든요.</p>
+</InterviewCard>
+
+<InterviewCard variant="ellie" name="엘리" avatar="/assets/Ellie.png">
+<p>모바일 디자인에 익숙하다 보니 웹뷰 캔버스가 너무 넓게 느껴졌고, 그 과정에서 시간을 많이 허비했어요. 현실적인 핵심 작업보다 폭주하는 기획 아이디어와 장밋빛 미래를 상상하는 데 시간을 쓴 것도 반성이 큽니다.</p>
+<p>디자인 픽스 전에 컴포넌트화부터 우악스럽게 시작했던 것도, 컬러를 일단 들이밀었던 것도 모두 되돌리고 싶은 순간들이에요. 완벽주의와 오만함, 게으름이 총출동한 결과였죠. 방향을 잡을 땐 빨리 논의하고, 빨리 집중하고, 빨리 실행해야 한다는 교훈을 다시 얻었습니다.</p>
+</InterviewCard>
+
+<InterviewCard variant="george" name="조지" avatar="/assets/George.png">
+<p>회사에서는 일이 뚝 끊기면 시간이 남아도는 게 힘들었는데, Scrumble에서는 반대로 해야 할 일이 너무 많아서 어디부터 손대야 할지 막막했습니다. 생각만 하다 멍하니 보내는 시간이 쌓이면서 중간중간 급격하게 지치기도 했어요.</p>
+<p>다시 돌아간다면 작은 것부터 빨리 시작했을 것 같아요. Tony가 말한 것처럼 절대적인 시간을 갈아 넣고라도 할 수 있는 일부터 해냈다면 덜 힘들었을 것 같습니다.</p>
+</InterviewCard>
+
+## Q3. 토니, 오랜만에 매니저가 아닌 개발자로 일해 본 소감은?
+
+<InterviewCard variant="tony" name="토니" avatar="/assets/Tony.png">
+<p>회고에도 남겼지만, 정말 행복했고 또 괴로웠어요. AI가 생산성을 올려준다 해도 결국 제 멘탈 모델과 메모리 용량이 한계라 마지막 디테일까지는 제가 해사야 하더라고요. Claude의 도움을 많이 받았지만, 스스로 해결해야 할 부분이 여전히 많았습니다.</p>
+<p>매니저로 일하며 익힌 의사결정 경험이 도움이 되기도 했지만, 커뮤니케이션과 우선순위 관리 같은 역량을 개발에 몰입하느라 잘 활용하지 못한 순간도 있었어요. 그래도 ‘팀 매니저 토니’가 아닌 ‘엔지니어 토니’로 돌아가는 시간은 성공적이었다고 말할 수 있을 것 같습니다.</p>
+</InterviewCard>
+
+## Q4. 토니가 다음으로 집중하고 싶은 목표는?
+
+<InterviewCard variant="tony" name="토니" avatar="/assets/Tony.png">
+<p>소규모 팀이나 솔로프리너에게 중요한 건 화려한 기술보다 정말 고객이 원하는 제품을 만드는 일이라고 생각해요. 제품·팀 관리를 오래 해왔다면 이제는 제품 성장에 초점을 맞출 때죠. 최근 본 강의에서 제품 리더의 존재 의의는 팀을 승리로 이끄는 데 있다고 했는데, 저도 영광의 순간을 만들기 위해 역량을 더 쏟아보려고 합니다.</p>
+</InterviewCard>
+
+## Q5. 엘리, 다시 프로덕트 디자이너 모드로 일해 보니 어땠나요?
+
+<InterviewCard variant="ellie" name="엘리" avatar="/assets/Ellie.png">
+<p>한계를 정말 많이 느꼈어요. 제 자신이 꽤 게을러졌다는 걸 인정하게 됐죠. AI를 본격적으로 활용한 것도 이번이 처음인데, 한 번 맛을 보니 사람이 참 쉽게 의존하게 되더라고요.</p>
+<p>원래는 손으로 스케치하면서 기술적 제약과 UX를 함께 정리했는데, 이번엔 눈으로만 보는 시간이 더 많았습니다. 그래도 영향이 적은 문서 작업은 AI 덕분에 훨씬 수월해졌고, 엣지 케이스 유저를 명확하게 정리한 순간이 가장 뿌듯했어요.</p>
+<p>오랜만에 시동 건 프로젝트라 그 자체로 좋았지만, 웹뷰 작업물에 대한 만족도는 낮아요. 사실 다 갈아엎고 싶은 마음입니다. 마음만 굴뚝같네요.</p>
+</InterviewCard>
+
+## Q6. 토니와의 갈등, 기억나는 순간이 있었나요?
+
+<InterviewCard variant="ellie" name="엘리" avatar="/assets/Ellie.png">
+<p>이젠 왜 그렇게까지 싸웠는지 기억도 안 나요. 협업하다 보면 관점 차이가 있고, 다들 맞는 말을 하지만 “니만 맞네, 나만 맞네” 하면서 목소리가 높아질 때가 있잖아요. 다행히 저와 토니는 풀어내는 과정도 어떻게든 잘 찾아냈습니다.</p>
+<p>갈등과 언성이 올라가는 건 결과를 도출하는 과정이라고 생각하지만, 감정 소모는 무시할 수 없더라고요. 이제는 논의 주제뿐 아니라 시간·기능·확장성 같은 제한선을 미리 합의해 두면 좋겠어요. 그렇게 하면 감정 소모를 많이 줄일 수 있을 것 같습니다.</p>
+</InterviewCard>
+
+## Q7. 조지, 퇴근 후와 주말까지 투자하며 얻은 것은 무엇인가요?
+
+<InterviewCard variant="george" name="조지" avatar="/assets/George.png">
+<p>처음부터 기술적인 목표를 명확히 세우진 못했지만, 예전 개발 스터디 때보다 적극적으로 임하고 커뮤니케이션을 잘해보자는 마음이 있었습니다. 초반엔 오바해서 말이 많았지만 프로젝트가 진행될수록 또 꺾이더라고요.</p>
+<p>일상 대화가 전부가 아니라, 상대가 어디까지 이해했고 무엇을 진행 중인지 공유하는 것이 진짜 커뮤니케이션이라는 걸 느꼈습니다. “API 공장장이 되겠다”는 목표도 생겼고, 설계와 요구사항 문서를 계속 써보며 피드백을 받으려고 합니다.</p>
+</InterviewCard>
+
+## Q8. 앞으로 팀원으로서 어떻게 기여하고 싶나요?
+
+<InterviewCard variant="george" name="조지" avatar="/assets/George.png">
+<p>아직은 파트타임으로 작은 부분을 맡고 있지만, 그마저도 Tony 도움 없이는 벅찬 게 사실입니다. 그래서 Ellie와 Tony가 마음 놓고 믿고 맡길 수 있는 팀원이 되고 싶어요.</p>
+</InterviewCard>
+
+## Q9. 1차 릴리즈 워크샵, 무엇이 가장 좋았나요?
+
+<InterviewCard variant="george" name="조지" avatar="/assets/George.png">
+<p>워크샵을 태어나 처음 해봤어요. 두 분이 준비한 만큼 성의를 보이고 싶어서 적극적으로 임했습니다. 발표 자료도 잘 보고 많이 배웠고, 끝나고 “걱정했는데 잘해줘서 고맙다”는 말을 들었을 때 정말 감사했어요. 서울에서의 풀코스 콘텐츠와 숙소 배려도 만족스러웠고, “이게 스타트업인가?”라는 느낌을 받았습니다.</p>
+</InterviewCard>
+
+<InterviewCard variant="ellie" name="엘리" avatar="/assets/Ellie.png">
+<p>이번 워크샵의 주 타깃은 사실 조지였어요. 장소 대관부터 콘텐츠까지 신경 쓴 이유입니다. 단순 결과 공유라면 비대면으로도 가능했겠지만, 우리의 서비스 목적과 부합하는 분위기를 만들고 싶었고 그게 잘 녹아든 것 같아요.</p>
+<p>발표 자료를 기를 쓰고 만들었답니다. 이것이 웤샵의 묘미이고 다음 웤샵을 기대하게 하는 썸띵? <em>Smooooth operator~</em></p>
+</InterviewCard>
+
+<InterviewCard variant="tony" name="토니" avatar="/assets/Tony.png">
+<p>제가 “혼자서도 잘해요”라고 말하기도 하지만, 사실 팀으로 일하는 걸 정말 좋아합니다. 예전보다 작은 팀이었어도 너무 즐거웠어요. IT 스타트업 문화를 경험해보지 못한 조지에게 보여주고 싶은 마음도 컸고, 원격으로 일해도 우리는 한 팀이라는 메시지를 전하고 싶었습니다.</p>
+<p>각자 준비한 발표가 재밌었고 서로 경청해 줬어요. 이번엔 프로젝트 마감 기념 워크샵이었지만, 다음엔 성과 달성 파티를 하고 싶네요. 워크샵 덕분에 서로 큰 동기부여를 받았습니다.</p>
+</InterviewCard>
+
+## Q10. Scrumble로 이루고 싶은 다음 목표는 무엇인가요?
+
+<InterviewCard variant="ellie" name="엘리" avatar="/assets/Ellie.png">
+<p>디자인 측면에서는 모바일 뷰와 브랜딩을 꼭 손보고 싶어요. 땜빵식 디자인 덕분에 제 작업물을 저도 흘겨보곤 하거든요. 워크샵에서 공유했던 ‘G타입 유저 인사이트’를 바탕으로 자잘한 UX 최적화를 계속 쌓아가고 싶습니다.</p>
+<p>엣지 케이스라고 정리했던 유저 타입이 시간이 지날수록 제 성향이기도 하다는 생각이 들어요. 초기엔 토니가 1번 고객이었다면, 이제는 저 자신도 또 다른 타깃층이 된 셈이죠. 결국 제가 만족할 수 있는 서비스로 발전시키고 싶습니다.</p>
+</InterviewCard>
+
+<InterviewCard variant="george" name="조지" avatar="/assets/George.png">
+<p>Scrumble을 통해 두 분의 일상과 업무 공유를 보면서 친밀감을 느꼈어요. 저도 제 일상과 업무를 적으면서 더 가까워졌고요. 아직 완성되지 않은 기능이 많으니 꾸준히 개발해서 팀 모두가 만족할 수 있는 제품으로 키우고 싶습니다.</p>
+</InterviewCard>
+
+<InterviewCard variant="tony" name="토니" avatar="/assets/Tony.png">
+<p>아직 영업 라인도 없고 공개를 전제로 만든 프로젝트는 아니었지만, 결국은 직접 돈을 내고 쓰는 고객이 생겨야겠죠. 지금은 다른 프로젝트를 진행하면서 틈틈이 업데이트 중이라, 빠른 시일 내에 퍼블릭 베타로 공개해 보고 싶습니다.</p>
+</InterviewCard>
+
+## Q11. 팀으로 함께하며 서로에게 고마웠던 점은?
+
+<InterviewCard variant="tony" name="토니" avatar="/assets/Tony.png">
+<ul className="interview-card__list">
+  <li><strong>엘리에게:</strong> 같은 공간에서 오랜 시간을 함께 일하면서 용기를 얻었습니다. 제가 혼자라면 쉽게 포기했을 텐데, 언제나 멋진 워딩과 디자인을 보여줄 거라는 믿음이 있었어요. Scrumble 3개월은 엘리와 함께한 시간이라 하나부터 열까지 모두 감사합니다.</li>
+  <li><strong>조지에게:</strong> 포기하지 않고 여기까지 따라와 준 것만으로도 고마워요. 제가 멘토링하며 부족한 모습이 많았는데도 잘 해줘서 감사합니다. 처음보다 분명 성장했고, 앞으로 더 가속해서 모멘텀을 이어가길 바랍니다.</li>
+</ul>
+</InterviewCard>
+
+<InterviewCard variant="ellie" name="엘리" avatar="/assets/Ellie.png">
+<ul className="interview-card__list">
+  <li><strong>토니에게:</strong> 병원 가는 시간을 빼고는 거의 같은 공간에서 생활 중인 토니. 결단력과 유쾌한 태도가 없었다면 여기까지 오지 못했을 거예요. 앞으로도 토론과 논쟁, 상처와 해소의 수많은 과정이 있겠지만 지혜롭게 헤쳐 나가며 더 이로운 가치를 향해 나아가길! 감사합니다.</li>
+  <li><strong>조지에게:</strong> 합류 과정이 쉽지 않았을 텐데도 중도 하차 없이 끝까지 함께해 줘서 고마워요. 제 성향과 닮은 부분이 많아서 토니가 야속해질 때도 있지만(?!), 이번 기회를 통해 분명 성장하고 있다는 걸 느끼게 될 겁니다.</li>
+</ul>
+</InterviewCard>
+
+<InterviewCard variant="george" name="조지" avatar="/assets/George.png">
+<ul className="interview-card__list">
+  <li><strong>토니에게:</strong> 포기하지 않고 이끌어 주셔서 감사합니다. 좋은 정보를 많이 알려주시고 가이드를 아끼지 않으셨어요. 무엇보다 팀에서 함께 일할 기회를 주셔서 고맙습니다.</li>
+  <li><strong>엘리에게:</strong> Tony보다 대화할 기회가 적었지만, 제가 발표하거나 회고할 때 집중해서 들어 주고 크게 리액션해 줘서 힘이 됐어요. 워크샵 준비로 고생하신 것도 느껴졌고, 만족스러운 경험이었습니다. 앞으로는 모르는 부분을 직접 묻는 연습을 하려고 합니다.</li>
+</ul>
+</InterviewCard>
+
+## Q12. 앞으로 서로에게 바라는 점이 있다면?
+
+<InterviewCard variant="tony" name="토니" avatar="/assets/Tony.png">
+<ul className="interview-card__list">
+  <li><strong>엘리에게:</strong> 더 자주 얘기하고 솔직하게 다투어 봅시다! 프로덕트 성장을 위해, 승리를 위해, 5년 전 어딘가에 두고 온 못다 한 소망을 다시 이어가요. 서로의 성장을 위해 더 많이 대화하길 바랍니다.</li>
+  <li><strong>조지에게:</strong> 포기하지 말고 끝까지 가요. 시장이 어떻고 AI가 어떻고 하는 말보다, 지금 하는 일에 자부심을 가지고 즐거움을 느끼면서 한 발 한 발 나아갔으면 합니다. 제가 가능한 한 도울게요.</li>
+</ul>
+</InterviewCard>
+
+<InterviewCard variant="ellie" name="엘리" avatar="/assets/Ellie.png">
+<ul className="interview-card__list">
+  <li><strong>토니에게:</strong> 못다 한 소망~ 떠올리기만 하면~ Soy lago...😶‍🌫️ 목표를 향해 내달리는 시간이 더 깊이 있고 의미 있게 되길! 더 자주 이야기하고, 더 솔직하게 다투고, 더 지혜롭게 해결합시다.</li>
+  <li><strong>조지에게:</strong> 스스로를 낮게 보고 작업을 폄하하지 않았으면 좋겠어요. 저도 자주 그러는데, 그러다 보면 더 나아갈 순간을 놓치곤 하거든요. 스스로를 믿고 앞으로 나아가는 우리가 됩시다!</li>
+</ul>
+</InterviewCard>
+
+<InterviewCard variant="george" name="조지" avatar="/assets/George.png">
+<ul className="interview-card__list">
+  <li><strong>토니에게:</strong> 저는 주위 환경과 함께하는 사람에 따라 크게 바뀌는 편이라 Tony와 더 친해지고 싶습니다. 그러려면 제가 말귀도 잘 알아듣고 꾸준히 성장해야겠죠. 멘토링하느라 바쁘고 힘들 텐데, 실망시키지 않도록 노력하겠습니다.</li>
+  <li><strong>엘리에게:</strong> Tony는 워낙 헛소리를 많이 들어서 내성이 있는 것 같은데 Ellie는 조금 버거워하는 게 보였어요. 조금 줄여 가면서 더 친해지고 싶습니다. 직접적으로 묻는 걸 연습 중이니 답답하시더라도 잘 부탁드릴게요!</li>
+</ul>
+</InterviewCard>
+
+---
+
+### 사진으로 보는 워크샵 이모저모
+
+<section className="workshop-gallery">
+  <figure className="workshop-gallery__hero">
+    <img src="/assets/retro_space.jpeg" alt="워크샵 장소 전경" loading="lazy" />
+    <figcaption>워크샵 장소!</figcaption>
+  </figure>
+
+  <div className="workshop-gallery__row">
+    <figure className="workshop-gallery__item">
+      <img src="/assets/cutie_ellie_pt.jpeg" alt="엘리가 발표 자료를 준비하는 장면" loading="lazy" />
+      <figcaption>PT 장인 엘리의 PT쇼</figcaption>
+    </figure>
+    <figure className="workshop-gallery__item">
+      <img src="/assets/OST_pt.png" alt="워크샵 발표 슬라이드 장면" loading="lazy" />
+      <figcaption>PT 장인 엘리의 PT쇼</figcaption>
+    </figure>
+    <figure className="workshop-gallery__item">
+      <img src="/assets/pt_end.jpeg" alt="발표를 마친 뒤의 엘리" loading="lazy" />
+      <figcaption>PT 장인 엘리의 PT쇼</figcaption>
+    </figure>
+  </div>
+
+  <figure className="workshop-gallery__hero">
+    <img src="/assets/workshop_meal.png" alt="워크샵 뒤풀이로 고기를 즐기는 모습" loading="lazy" />
+    <figcaption>워크샵 끝나고는 고기지!</figcaption>
+  </figure>
+
+  <p className="workshop-gallery__cta">즐거웠던 워크샵, 다음에 또!</p>
+</section>
+
+---
+
+Scrumble 팀의 1차 릴리즈는 단순히 기능을 완성한 순간이 아니라, 서로의 속도와 체온을 맞춰 가는 과정이었다. 다음 시즌엔 어떤 성장 그래프를 그릴지, 그리고 이 인터뷰가 또 다른 기록의 출발점이 되길 기대한다.

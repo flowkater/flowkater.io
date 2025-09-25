@@ -1,0 +1,35 @@
+---
+interface Props {
+  name: string;
+  avatar: string;
+  variant?: "tony" | "ellie" | "george" | string;
+  alt?: string;
+  loading?: "lazy" | "eager";
+}
+
+const {
+  name,
+  avatar,
+  variant,
+  alt = name,
+  loading = "lazy",
+} = Astro.props as Props;
+
+const classes = ["interview-card"];
+if (variant) classes.push(`interview-card--${variant}`);
+---
+
+<div class={classes.join(" ")}>
+  <img
+    src={avatar}
+    alt={alt}
+    class="interview-card__avatar"
+    width="60"
+    height="60"
+    loading={loading}
+  />
+  <div class="interview-card__body">
+    <h3 class="interview-card__name">{name}</h3>
+    <slot />
+  </div>
+</div>

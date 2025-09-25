@@ -25,6 +25,15 @@ html[data-theme="light"] {
   --accent: #006cac;
   --muted: #e6e6e6;
   --border: #ece9e9;
+  --tony-accent: #1f3b83;
+  --tony-surface: rgba(31, 59, 131, 0.08);
+  --tony-foreground: #1f3b83;
+  --ellie-accent: #aa2f70;
+  --ellie-surface: rgba(170, 47, 112, 0.08);
+  --ellie-foreground: #7d1f4f;
+  --george-accent: #2d6e4f;
+  --george-surface: rgba(45, 110, 79, 0.08);
+  --george-foreground: #25563a;
 }
 
 html[data-theme="dark"] {
@@ -33,6 +42,15 @@ html[data-theme="dark"] {
   --accent: #ff6b01;
   --muted: #343f60;
   --border: #ab4b08;
+  --tony-accent: #82b0ff;
+  --tony-surface: rgba(130, 176, 255, 0.18);
+  --tony-foreground: #c6d8ff;
+  --ellie-accent: #ff9bd6;
+  --ellie-surface: rgba(255, 155, 214, 0.22);
+  --ellie-foreground: #ffd2eb;
+  --george-accent: #8bd8a7;
+  --george-surface: rgba(139, 216, 167, 0.18);
+  --george-foreground: #ccf4de;
 }
 
 @theme inline {
@@ -81,4 +99,155 @@ html[data-theme="dark"] {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;
+}
+
+.interview-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  column-gap: 1rem;
+  row-gap: 0.75rem;
+  margin-block: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--card-border, var(--color-border));
+  background: var(--card-surface, transparent);
+  color: var(--card-foreground, var(--color-foreground));
+  box-shadow: 0 18px 40px -28px rgba(17, 24, 39, 0.35);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.interview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 46px -28px rgba(17, 24, 39, 0.42);
+}
+
+.interview-card__avatar {
+  width: clamp(44px, 6vw, 60px);
+  height: clamp(44px, 6vw, 60px);
+  border-radius: 9999px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid currentColor;
+  background: #fff;
+  margin-top: 0.15rem;
+}
+
+.interview-card__body {
+  display: grid;
+  gap: 0.65rem;
+  align-content: start;
+  margin-top: 0.55rem;
+}
+
+.interview-card__name {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.interview-card__body p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.interview-card__list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.interview-card__list li {
+  list-style: disc;
+  line-height: 1.7;
+}
+
+.interview-card__list strong {
+  font-weight: 700;
+}
+
+.interview-card--tony {
+  --card-border: var(--tony-accent);
+  --card-surface: var(--tony-surface);
+  --card-foreground: var(--tony-foreground);
+}
+
+.interview-card--tony .interview-card__name {
+  color: var(--tony-accent);
+}
+
+.interview-card--ellie {
+  --card-border: var(--ellie-accent);
+  --card-surface: var(--ellie-surface);
+  --card-foreground: var(--ellie-foreground);
+}
+
+.interview-card--ellie .interview-card__name {
+  color: var(--ellie-accent);
+}
+
+.interview-card--george {
+  --card-border: var(--george-accent);
+  --card-surface: var(--george-surface);
+  --card-foreground: var(--george-foreground);
+}
+
+.interview-card--george .interview-card__name {
+  color: var(--george-accent);
+}
+
+.workshop-gallery {
+  display: grid;
+  gap: 2rem;
+  margin-block: 3rem;
+}
+
+.workshop-gallery figure {
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.workshop-gallery__hero {
+  max-width: 300px;
+  text-align: left;
+  justify-items: start;
+}
+
+.workshop-gallery__hero img {
+  width: 100%;
+}
+
+.workshop-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.25rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 32px -24px rgba(17, 24, 39, 0.45);
+}
+
+.workshop-gallery figcaption {
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--color-foreground) 70%, transparent);
+}
+
+.workshop-gallery__row {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .workshop-gallery__row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.workshop-gallery__cta {
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-foreground);
 }
