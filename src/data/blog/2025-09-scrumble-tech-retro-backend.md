@@ -351,4 +351,4 @@ Golang 쓰면서 한가지 아쉬운 점은 함수형 프로그래밍인 것 같
 - 이전 글
   - [Scrumble 기술 회고 (부제 - 풀스택 개발과 바이브 코딩의 실패. Golang 과 Nextjs) - 0. 들어가며](/posts/2025-09-scrumble-tech-retro-intro)
 - 다음 글
-  - [Scrumble 기술 회고 - 2. 프론트엔드, 그리고 바이브 코딩을 곁들인](/posts/2025-10-03-scrumble-tech-retro-frontend-with-vibe-coding)
+  - [Scrumble 기술 회고 - 2. 프론트엔드, 그리고 바이브 코딩을 곁들인](/posts/scrumble-tech-retro-frontend-with-vibe-coding)

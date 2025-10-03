@@ -24,7 +24,7 @@ timezone: "Asia/Seoul"
 # 기술 스택
 
 - **프레임워크**: Next.js 15.1.8(App Router) + React 19, 개발 서버는 Turbopack
-- **언어**: TypeScript 5(엄격 모드)
+- **언어**: TypeScript 5
 - **스타일링**: Tailwind CSS 3.4, tailwind-merge, class-variance-authority, Pretendard 폰트, PostCSS/Autoprefixer
 - **상태·데이터**: 클라이언트 상태는 Zustand 5, 서버 통신은 TanStack Query 5 + Axios 1.9
 - **실시간**: `centrifuge` 클라이언트로 Centrifugo 연동(자동 재연결·채널 유지)
@@ -228,7 +228,7 @@ feature_hooks --> centrifugo_service
 
 ```
 
-# 구현 상세
+# 구현 상세 회고
 
 ## 스타일
 
@@ -310,9 +310,9 @@ Nextjs 의 장점(?)은 자체 서버를 가질 수 있고, 파일 저장을 gol
 
 - heic2any: 기본 전략으로 세 가지 출력 옵션(JPEG 90%, PNG, JPEG 100%)을 순차 시도하며 Blob이 비어있으면 실패로 간주
 - heic-decode: heic-decode로 HEIF 비트스트림을 직접 디코드한 뒤 다양한 데이터 구조(Uint8Array, 객체 등)를 정규화해 ImageData로 캔버스에 그린 후 JPEG로 직렬화
-- FileReader: 외부 라이브러리 없이 Base64 URL을 읽어 <img>에 로드한 뒤 캔버스로 그리고 JPEG Blob을 생성하는 브라우저 기본 API 폴백
+- FileReader: 외부 라이브러리 없이 Base64 URL을 읽어 img 태그에 로드한 뒤 캔버스로 그리고 JPEG Blob을 생성하는 브라우저 기본 API 폴백
 - heic-convert: Node 기반 heic-convert 모듈을 브라우저 번들에서 동적 임포트해 Buffer → JPEG 변환을 시도하고, 출력버퍼가 비어있으면 오류로 처리
-- 브라우저 네이티브: 마지막 수단으로 URL.createObjectURL과 <canvas>만 이용해 이미지를 다시 그려 JPEG Blob을 만드는 전략
+- 브라우저 네이티브: 마지막 수단으로 URL.createObjectURL과 canvas 태그만 이용해 이미지를 다시 그려 JPEG Blob을 만드는 전략
 
 Claude Code 의 도움을 많이 받긴 했지만 결론적으로 꽤 복잡한 변환기가 되었고 이 정도로 구현하니까 예외없이 모든 HEIC 이미지가 변환이 되게 되었다.
 
@@ -347,4 +347,4 @@ SDD나 PRD 문서, 스펙 정의를 먼저하는게 그나마 유일한 대안�
   - [Scrumble 팀 1차 릴리즈 인터뷰](/posts/2025-09-25-scrumble-project-team-interview)
   - [Scrumble 기술 회고 - 0. 들어가며 (Why Golang?)](/posts/2025-09-scrumble-tech-retro-intro)
   - [Scrumble 기술 회고 - 1. 백엔드 (Golang, DDD, Entgo, Event, Centrifugo)](/posts/2025-09-scrumble-tech-retro-backend)
-  - [Scrumble 기술 회고 - 2. 프론트엔드, 그리고 바이브 코딩을 곁들인](/posts/2025-10-03-scrumble-tech-retro-frontend-with-vibe-coding)
+  - [Scrumble 기술 회고 - 2. 프론트엔드, 그리고 바이브 코딩을 곁들인](/posts/scrumble-tech-retro-frontend-with-vibe-coding)
