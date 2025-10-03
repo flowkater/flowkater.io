@@ -5,7 +5,7 @@ summary: "Scrumble 사이드 프로젝트를 준비하며 집이라는 환경에
 pubDatetime: 2025-09-07T09:00:00+09:00
 updatedDatetime: 2025-09-07T09:00:00+09:00
 tags: ["회고", "go", "scrumble"]
-featured: true
+featured: false
 draft: false
 ---
 
