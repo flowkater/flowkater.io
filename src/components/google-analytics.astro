@@ -18,9 +18,11 @@ gtag('config', '${measurementId}', { send_page_view: false });
 
 function trackAstroPageView() {
   if (typeof window.gtag !== 'function') return;
-  window.gtag('config', '${measurementId}', {
+  window.gtag('event', 'page_view', {
+    send_to: '${measurementId}',
     page_path: window.location.pathname + window.location.search,
     page_location: window.location.href,
+    page_title: document.title,
   });
 }
 
