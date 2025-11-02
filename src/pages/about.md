@@ -24,20 +24,22 @@ title: "About"
 
 ## 최근 경력
 
-- **(현재) Indie Developer**
-  - 2025.06 ~
+- **Loopetto - Co-Founder & Indie Hacker**
+  - 2025.06 ~ 현재
   - [scrumble](https://scrumbl.co) 팀 데일리 스크럼 도구 개발 (내부 사용 중)
   - 두번째 프로젝트 진행중
 
-- **IHFB (I Hate Flying Bugs) — CTO R&D 리더십**  
-  2021.04 합류(초기 6개월 계약) → 이후 3년+ R&D 본부 리드. 3명이던 개발팀을 35명으로 빌딩. 2025.04.09 퇴사.
+- **IHFB (아이헤이트플라잉버그스(주)) — CTO R&D 리더십**
+  - 시리즈C 에듀테크 스타트업
+  - 2021.04 합류(초기 6개월 계약) → 이후 3년+ R&D 본부 리드. 3명이던 개발팀을 35명으로 빌딩. 2025.04.09 퇴사.
 
-- **Todait Inc. — Founder & CEO**  
-  2015.08 설립, 스터디 플래너 앱 Todait 운영. 현재는 법인 종료.
+- **Todait Inc. ((주)투데잇) — Founder & CEO**
+  - pre A 생산성 및 에듀테크 스타트업
+  - 2015.08 설립, 스터디 플래너 앱 Todait 운영. 현재는 법인 종료.
 
 ## Contact Me
 
 대화하거나 협업을 제안하고 싶다면 메일이나 Threads DM으로 편하게 연락 주세요.
 
-- Email: [hello@flowkater.io](mailto:hello@flowkater.io) (_사용 중인 주소로 교체_)
+- Email: [chjw102@gmail.com](mailto:chjw102@gmail.com)
 - Threads: [https://www.threads.com/@flowkater](https://www.threads.com/@flowkater)
