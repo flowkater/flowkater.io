@@ -4,7 +4,7 @@ description: "세 번째 주 tWIL에서는 Dame24 프로토타입을 Go·React�
 summary: "세 번째 주 tWIL에서는 Dame24 프로토타입을 Go·React로 완성하며 라이브러리 선택과 삽질을 정리하고 리더십·운동 루틴에 대한 회고를 남겼다. 들어가며 이번 주는 집중을 했던 한주 개발 Dame24 지난주 생성했던 것을 1차 매듭을 지어보았다. 서비스 요구사항은 스터디 계획을..."
 pubDatetime: 2020-12-22T14:12:59+09:00
 updatedDatetime: 2020-12-22T14:12:59+09:00
-tags: ["TIL"]
+tags: ["기록", "TIL"]
 draft: false
 category: "twil"
 keywords: ["twil","TIL","로그","회고"]

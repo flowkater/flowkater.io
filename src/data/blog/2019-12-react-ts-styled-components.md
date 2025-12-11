@@ -4,7 +4,7 @@ description: "React TypeScript 프로젝트에 Styled Components를 세팅하는
 summary: "React TypeScript 프로젝트에 Styled Components를 세팅하는 과정을 테마 선언, 타입 확장, 전역 스타일 구성까지 단계별로 정리한 실습 메모. Styled Components Styled Components는 대표적인 CSS in JS 라이브러리이다. 따로 CSS..."
 pubDatetime: 2019-12-17T18:12:59+09:00
 updatedDatetime: 2019-12-17T18:12:59+09:00
-tags: ["frontend"]
+tags: ["개발", "프론트엔드", "React"]
 draft: false
 category: "frontend"
 keywords: ["TypeScript","React","Styled Components","프론트엔드","리액트"]

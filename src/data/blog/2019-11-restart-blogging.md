@@ -4,7 +4,7 @@ description: "대표·기획자로 지내다 다시 코드로 돌아오며 Gatsb
 summary: "대표·기획자로 지내다 다시 코드로 돌아오며 Gatsby 기반 블로그를 재개한 배경, React 학습 계획, 데이터 과학과 운동 루틴까지 현재 관심사를 기록. 최근에 다시 리액트 개발을 시작하면서 여러가지 어려움에 봉착하였다. 사실 내가 리액트 개발을 처음 접한거 2016년이었으니..."
 pubDatetime: 2019-11-13T11:11:59+09:00
 updatedDatetime: 2019-11-13T11:11:59+09:00
-tags: ["daily"]
+tags: ["에세이", "일상"]
 draft: false
 category: "daily"
 keywords: ["Gatsbyjs","Blog","블로깅","개츠비"]

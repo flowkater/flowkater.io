@@ -4,7 +4,7 @@ description: "DataColon 자체 플랫폼을 한 달 만에 출시하며 Django·
 summary: "DataColon 자체 플랫폼을 한 달 만에 출시하며 Django·React·GraphQL을 도입한 배경, 기존 솔루션의 한계, 부트스트랩 경험을 되돌아본 회고 서문. DataColon 개발 후기 1. 들어가며 (현재 글) 2. 백엔드 편 3. 프론트엔드 편 4. 개발 외 이야기 <br..."
 pubDatetime: 2020-03-13T11:03:59+09:00
 updatedDatetime: 2020-03-13T11:03:59+09:00
-tags: ["project"]
+tags: ["프로젝트", "백엔드", "프론트엔드"]
 draft: false
 category: "project"
 keywords:

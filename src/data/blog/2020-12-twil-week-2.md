@@ -4,7 +4,7 @@ description: "12월 둘째 주, 퇴사 결정과 M1 취소부터 Go 도입, 사�
 summary: "12월 둘째 주, 퇴사 결정과 M1 취소부터 Go 도입, 사이드 프로젝트 실험, 주간 Try/Keep/Problem까지 기록한 첫 tWIL 로그. 20년 12월 7일 ~ 12월 13일 들어가며 This Week I Learned 시작 같이 개발하는 친구의 블로그 제안으로 약간의 강제성을..."
 pubDatetime: 2020-12-13T15:12:35+09:00
 updatedDatetime: 2020-12-13T15:12:35+09:00
-tags: ["TIL"]
+tags: ["기록", "TIL"]
 draft: false
 category: "twil"
 keywords: ["twil", "TIL", "로그", "회고"]

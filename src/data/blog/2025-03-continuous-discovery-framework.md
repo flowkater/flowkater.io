@@ -4,7 +4,7 @@ description: "Teresa Torres의 기회-솔루션 트리 개념을 정리하며 �
 summary: "Teresa Torres의 기회 솔루션 트리 개념을 정리하며 비즈니스 성과와 고객 기회를 연결하고 의사결정을 구조화하는 Continuous Discovery 프레임워크를 소개. Intro 비지니스 요구사항과 고객의 요구사항이 충돌 미국 웰스파고 은행은 크로스 셀링(cross..."
 pubDatetime: 2025-03-02T09:00:00+09:00
 updatedDatetime: 2025-03-02T09:00:00+09:00
-tags: ["product"]
+tags: ["프로덕트", "디스커버리"]
 draft: false
 ---
 

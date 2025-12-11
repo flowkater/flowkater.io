@@ -4,7 +4,7 @@ description: "Ted Lasso의 ‘Be curious, not judgemental’를 인용해 리더
 summary: "Ted Lasso의 ‘Be curious, not judgemental’를 인용해 리더가 판단 대신 질문을 던질 때 만들어지는 신뢰와 성장 경험을 풀어낸 에세이. “Guys have underestimated me my entire life and for years I never..."
 pubDatetime: 2024-02-01T09:00:00+09:00
 updatedDatetime: 2024-02-01T09:00:00+09:00
-tags: ["essay"]
+tags: ["에세이", "리더십"]
 draft: false
 ---
 

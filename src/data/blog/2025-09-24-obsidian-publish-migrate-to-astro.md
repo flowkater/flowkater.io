@@ -4,7 +4,7 @@ description: "약 1년 반 정도 쓰던 Obsidian Publish 에서 Astro 기반 �
 summary: "약 1년 반 정도 쓰던 Obsidian Publish 에서 Astro 기반 블로그로 마이그레이션 했습니다. Obsidian 은 훌륭하지만 Publish 는 아직 블로깅 툴로는 많이 부족한 것 같아요. 그리고 Astro 는 무료입니다. Obsidian 은 개인 위키와 작성을 위해 굉장히..."
 pubDatetime: 2025-09-24T14:18:38+09:00
 updatedDatetime: 2025-09-24T14:18:38+09:00
-tags: ["etc"]
+tags: ["기록", "블로그"]
 featured: false
 draft: false
 slug: "obsidian-publish-migrate-to-astro"

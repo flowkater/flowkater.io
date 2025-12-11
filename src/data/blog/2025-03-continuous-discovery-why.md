@@ -4,7 +4,7 @@ description: "Continuous Discovery가 필요한 이유와 역사, 필수 마인�
 summary: "Continuous Discovery가 필요한 이유와 역사, 필수 마인드셋, 주간 고객 접점을 유지하는 실무 정의를 요약하고 프레임워크를 팀에 적용할 힌트도 메모했다. Intro 모든 제품 팀은 일련의 활동을 통해 무엇을 만들지 결정한 다음, 그것을 만들고 제공하기 위해 또 다른 일련의..."
 pubDatetime: 2025-03-01T09:00:00+09:00
 updatedDatetime: 2025-03-01T09:00:00+09:00
-tags: ["product"]
+tags: ["프로덕트", "디스커버리"]
 draft: false
 ---
 

@@ -4,7 +4,7 @@ description: "React TypeScript 프로젝트에서 Apollo Client와 Styled Compon
 summary: "프론트엔드 프로젝트를 위해 자주 사용하는 기본 개발 환경 구축 Typescript, Apollo, Styled Components 를 이용한 React 튜토리얼 기본 개발 환경 구축 s create react app sample client typescript ````s yarn add..."
 pubDatetime: 2019-11-22T16:11:59+09:00
 updatedDatetime: 2019-11-22T16:11:59+09:00
-tags: ["frontend"]
+tags: ["개발", "프론트엔드", "React"]
 draft: false
 category: "frontend"
 keywords: ["TypeScript","Apollo","Styled Components","프론트엔드","리액트"]

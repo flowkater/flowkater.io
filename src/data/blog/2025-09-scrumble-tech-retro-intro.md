@@ -4,7 +4,7 @@ description: "Scrumble 기술 회고 시리즈를 여는 글로 Golang·Next.js 
 summary: "Scrumble 기술 회고 시리즈의 서문으로, Golang·Next.js 조합을 선택한 배경과 바이브 코딩이 준 도움과 한계, 이후 편에서 다룰 백엔드·프런트엔드·LLM 챕터를 어떻게 이어갈지 로드맵을 제시하는 방향 소개 글이다. 독자가 무엇을 기대하면 좋을지와 읽는 순서를 명확히..."
 pubDatetime: 2025-09-21T09:00:00+09:00
 updatedDatetime: 2025-09-21T09:00:00+09:00
-tags: ["회고", "go", "scrumble"]
+tags: ["프로젝트", "golang", "scrumble"]
 draft: false
 ---
 

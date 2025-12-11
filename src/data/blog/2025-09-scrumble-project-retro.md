@@ -4,7 +4,7 @@ description: "Scrumble 사이드 프로젝트에서 홈 오피스 협업 방식,
 summary: "Scrumble 사이드 프로젝트를 준비하며 집이라는 환경에서 협업 시스템을 세운 과정, 과도한 스펙과 데드라인 부재가 만든 지연, LLM 연동과 서드파티 통합 계획을 어떻게 손질했는지를 월별로 정리한 파트너십 회고다. 파트너와 나눈 갈등과 해결책, 다음 시즌 로드맵과 우선순위 조정..."
 pubDatetime: 2025-09-07T09:00:00+09:00
 updatedDatetime: 2025-09-07T09:00:00+09:00
-tags: ["회고", "go", "scrumble"]
+tags: ["회고", "프로젝트회고", "scrumble"]
 featured: false
 draft: false
 ---

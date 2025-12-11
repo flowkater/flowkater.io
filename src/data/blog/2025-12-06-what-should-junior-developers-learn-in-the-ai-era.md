@@ -7,9 +7,9 @@ modDatetime: 2025-12-06T20:40:16+09:00
 updatedDatetime: 2025-12-06T20:40:16+09:00
 canonicalURL: "https://flowkater.io/posts/2025-12-06-what-should-junior-developers-learn-in-the-ai-era/"
 tags:
-  - "career"
+  - "에세이"
+  - "커리어"
   - "AI"
-  - "essay"
 # ogImage: "/assets/og/sample.png" # (선택) 커스텀 OG 이미지 경로. 사용하지 않으면 이 줄을 삭제하세요.
 featured: true
 draft: false

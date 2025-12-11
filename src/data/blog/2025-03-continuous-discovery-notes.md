@@ -4,7 +4,7 @@ description: "지속적인 제품 발견의 습관 (Continuous Discovery Habits 
 summary: "지속적인 제품 발견의 습관 (Continuous Discovery Habits Discover Products that Create Customer Value and Business Value) 정리중 (WIP) Part 1 지속적인 제품 발견이란 무엇인가? 1. The What And..."
 pubDatetime: 2025-03-01T09:00:00+09:00
 updatedDatetime: 2025-03-01T09:00:00+09:00
-tags: ["product"]
+tags: ["프로덕트", "디스커버리"]
 draft: false
 ---
 
