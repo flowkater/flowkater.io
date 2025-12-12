@@ -1,11 +1,11 @@
 ---
-title: "2025 고퍼콘 후기"
-description: "마곡 코엑스에서 열린 2025 고퍼콘 참석 후기. Go 언어 발표 리뷰와 함께, 컨퍼런스의 진짜 가치는 네트워킹에 있다는 깨달음을 공유합니다."
+title: "2025 고퍼콘 코리아 후기"
+description: "마곡 코엑스에서 열린 2025 고퍼콘 코리아 참석 후기. Go 언어 발표 리뷰와 함께, 컨퍼런스의 진짜 가치는 네트워킹에 있다는 깨달음을 공유합니다."
 summary: "오랜만에 참석한 개발 컨퍼런스. Go 발표들도 좋았지만, 결국 컨퍼런스의 핵심은 네트워킹이었다."
 pubDatetime: 2025-12-11T16:27:07+09:00
 modDatetime: 2025-12-11T16:27:07+09:00
 updatedDatetime: 2025-12-11T16:27:07+09:00
-canonicalURL: "https://flowkater.io/posts/2025-12-11-2025-gophercon-review/"
+canonicalURL: "https://flowkater.io/posts/2025-12-11-2025-gophercon-korea-review/"
 tags:
   - "후기"
   - "컨퍼런스"
@@ -13,7 +13,7 @@ tags:
 # ogImage: "/assets/og/sample.png" # (선택) 커스텀 OG 이미지 경로. 사용하지 않으면 이 줄을 삭제하세요.
 featured: false
 draft: false
-slug: "2025-gophercon-review"
+slug: "2025-gophercon-korea-review"
 keywords:
   - "고퍼콘"
   - "GopherCon Korea"
