@@ -1,5 +1,5 @@
 ---
-title: "Opencode + Google Antigravity로 Claude Opus 4.5 무료로 사용하기"
+title: "Opencode + Google Antigravity로 Claude Opus 4.5 무료로 사용하기 + 오픈 코드에서 Claude Code 계속 사용하는 방법"
 description: "Opencode에서 Google Antigravity를 통해 Claude Opus 4.5를 무료로 사용하는 방법을 소개합니다. 인증부터 모델 설정까지 단계별로 안내합니다."
 summary: "Opencode에서 쿼터 부족 현상을 겪고 있다면, Google Antigravity를 통해 Claude Opus 4.5를 무료로 사용하는 방법을 알아보세요."
 pubDatetime: 2026-01-08T16:55:47+09:00
@@ -23,6 +23,38 @@ keywords:
   - "oh-my-opencode"
 timezone: "Asia/Seoul"
 ---
+
+## !오픈 코드에서 클로드 코드 계속 사용하는 방법 - ((1월 9일 (추가)))
+
+출처: https://github.com/anomalyco/opencode-anthropic-auth/pull/10
+
+PR은 Anthropic OAuth(Claude Code) 환경에서 툴 이름 문제로 인해 요청이 제대로 안 가는 버그를 플러그인으로 우회하는 패치다.
+코멘트의 “override the plugin via config”는 opencode 코어를 수정하지 말고 opencode.json의 plugins 배열에 "opencode-anthropic-auth"를 추가해서 이 로직을 켜라는 의미다.
+따라서, 지금 사용하는 프로젝트(또는 글로벌 설정)에 위처럼 plugins 설정만 추가하면 된다.
+
+```sh
+npm install opencode-anthropic-auth
+```
+
+`~/.config/opencode/opencode.json`에 해당 플러그인 추가
+
+```json
+{
+  "plugin": [
+    "기존-플러그인-이름들",
+    "opencode-anthropic-auth" // -> 이걸 추가해준다.
+  ],
+
+  //....
+```
+
+```sh
+opencode login auth
+```
+
+opencode 로 다시 anthropic Oauth 로그인 후, opencode 실행하면 에러가 사라지고 다시 사용 가능
+
+# 이전 글
 
 최근에 유행하는 OpenCode (+ oh-my-opencode)를 열심히 사용하고 있다. 그런데 새해가 되면서 Claude 사용량(쿼터)이 이전보다 확 줄어든 느낌이다. 버그인지(reddit에 꽤 보고가 올라오고 있다), 의도된 변경인지, 아니면 연말 2배 사용량에 익숙해져서 상대적으로 적게 느껴지는 건지 모르겠다. 아무튼 쿼터 부족 현상이 덩달아 발생해서 스레드를 살펴보니, OpenCode에서 Claude Opus 4.5를 무료로 사용할 수 있다는 얘기가 있었다. "스하리!"를 남겼으나 답변이 없어서 직접 방법을 찾아보았다.
 
