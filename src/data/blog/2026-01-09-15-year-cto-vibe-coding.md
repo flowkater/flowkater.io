@@ -6,14 +6,14 @@ pubDatetime: 2026-01-09T16:00:00+09:00
 updatedDatetime: 2026-01-09T16:00:00+09:00
 tags: ["에세이", "바이브코딩", "AI코딩", "개발"]
 featured: false
-draft: true
+draft: false
 ---
 
 ## 들어가며
 
 > 먼저 어그로 끌어서 미안하다. 나는 15년차 CTO가 아니다. (15년째 개발을 하고 있는 건 맞음) 그 다음 현재 CTO도 아니다. (작년에 퇴사함.)
 
-OpenCode (+oh-my-opencode) 열풍이 한번 지나갔다. 지난 글에서 언급했듯이 ToS 이슈나 여러 이슈들로 아주 불태운 시기였다. 오늘 날짜로 막혔는데 개인적으로 우회하는 방법이 있긴 하나 지금 남은 작업들은 Claude Code만으로도 큰 문제가 없을 것 같아 그냥 Claude Code를 당분간은 쓰기로 결정했다.
+OpenCode (+oh-my-opencode) 열풍이 한번 지나갔다. ![지난 글](https://flowkater.io/posts/claude-opus-free-opencode-antigravity/)에서 언급했듯이 ToS 이슈나 여러 이슈들로 아주 불태운 시기였다. 오늘 날짜로 막혔는데 개인적으로 우회하는 방법이 있긴 하나 지금 남은 작업들은 Claude Code만으로도 큰 문제가 없을 것 같아 그냥 Claude Code를 당분간은 쓰기로 결정했다.
 
 요즘 AI 코딩 도구들이 쏟아져 나오고 있다. Cursor, Windsurf, Copilot, 그리고 Claude Code까지. 어느 도구가 더 좋은지 비교하는 글도 많고, 각자 자기만의 워크플로우를 공유하는 글도 넘쳐난다. 모두가 "바이브 코딩"을 외치고, 프롬프트 몇 줄에 앱이 뚝딱 나오는 영상들이 유튜브와 트위터를 장식한다. "한 달 걸릴 일을 3시간 만에 끝냈어요!" 같은 이야기가 매일 들린다.
 
@@ -25,11 +25,9 @@ OpenCode (+oh-my-opencode) 열풍이 한번 지나갔다. 지난 글에서 언�
 
 ## 켄트 백의 증강형 코딩
 
-해당 워크플로우는 켄트 백의 증강형 코딩(Augmented Coding)에서 영감을 받았다.
+해당 워크플로우는 ![켄트 백의 증강형 코딩(Augmented Coding)](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes) 에서 영감을 받았다.
 
-https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes?ref=stdy.blog
-
-국내에 번역된 글도 많으니 한번 읽어보면 좋을 것 같다. AI 코딩 시대에 6개월 전 글은 너무 오래된 감이 없지 않아 있지만, 지금 내가 개발할 때 아주 유용하게 쓰는 워크플로우가 여기서 출발했다.
+국내에 번역된 글도 많으니 한번 검색해서 읽어보면 좋을 것 같다. AI 코딩 시대에 6개월 전 글은 너무 오래된 감이 없지 않아 있지만, 지금 내가 개발할 때 아주 유용하게 쓰는 워크플로우가 여기서 출발했다.
 
 켄트 백이 말하는 증강형 코딩의 핵심은 명확하다. **AI가 코드를 작성하더라도, 인간이 통제력을 유지해야 한다는 것이다.** 단순히 프롬프트를 던지고 결과물을 받아보는 게 아니라, 작은 단위로 쪼개서 검증하고, 이해하면서 진행하는 방식이다. TDD(Test-Driven Development)가 그 도구가 된다.
 
@@ -93,9 +91,9 @@ flowchart LR
 
 너무 코드 자체를 인지하지 못하고 진행하다 보니 내가 제대로 프로젝트를 매니징하는 느낌이 들지 않았다. AI에게 맡겨놓고 쉬기에는 애매하고, 돌아가는 걸 기다리며 집중력은 깨지면서 Thread를 기웃거리는 건 비단 나만의 문제는 아닐 것이다.
 
-이런 경험 없나? AI가 열심히 코드를 생성하는 동안 뭘 해야 할지 모르겠는 그 애매한 시간. 다른 일을 하자니 곧 결과가 나올 것 같고, 그냥 기다리자니 시간이 아깝다. 그래서 Thread나 유튜브를 보게 되고, 막상 결과가 나왔을 때 집중력은 이미 바닥이다. 결과를 확인하고 피드백을 해야하는데 마음이 이미 다른 데 가 있다. 이게 반복되면서 프로젝트 전체를 조망하는 감각이 점점 흐려졌다.
+이런 경험 다들 있을 것이다. AI가 열심히 코드를 생성하는 동안 뭘 해야 할지 모르겠는 그 애매한 시간. 다른 일을 하자니 곧 결과가 나올 것 같고, 그냥 기다리자니 시간이 아깝다. 그래서 Thread나 유튜브를 보게 되고, 막상 결과가 나왔을 때 집중력은 이미 바닥이다. 결과를 확인하고 피드백을 해야하는데 마음이 이미 다른 데 가 있다. 이게 반복되면서 프로젝트 전체를 조망하는 감각이 점점 흐려졌다.
 
-심리학적으로도 이건 설명이 된다. 인간은 자신이 통제하고 있다는 느낌이 없으면 불안해한다. 특히 본인의 전문 영역에서 그렇다. 개발자가 코드를 모른다는 건 마치 운전사가 핸들을 안 잡고 있는 것과 비슷하다. 차가 알아서 잘 가고 있어도, 불안하다. 심지어 목적지에 제대로 가고 있는지도 확신이 안 선다. 자율주행 기술이 아무리 발전해도 운전대를 완전히 놓는 게 불안한 것처럼, AI 코딩도 마찬가지다. 
+심리학적으로도 이건 설명이 된다. 인간은 자신이 통제하고 있다는 느낌이 없으면 불안해한다. 특히 본인의 전문 영역에서 그렇다. 개발자가 코드를 모른다는 건 마치 운전사가 핸들을 안 잡고 있는 것과 비슷하다. 차가 알아서 잘 가고 있어도, 불안하다. 심지어 목적지에 제대로 가고 있는지도 확신이 안 선다. 자율주행 기술이 아무리 발전해도 운전대를 완전히 놓는 게 불안한 것처럼, AI 코딩도 마찬가지다.
 
 결국 AI agent는 인간이 하는 일 중에서 시간이 많이 드는 일을 자동화해주는 것이다. 다만 모든 걸 AI에게 넘기니 디버깅이 어려워졌다. '내가 이 코드를 모른다'는 인식이 커지면서 오히려 생산성이 떨어졌다. "이 코드 어디서 뭘 하는 거지?"라는 질문에 스스로 답할 수 없을 때 오는 그 막막함. 그래서 어느 정도는 컨트롤 하에 두기 위해 결국 이런 방법을 정착했다.
 
@@ -247,12 +245,12 @@ Plan 생성 API(`POST /plans`)를 구현할 때 사용한 plan.md의 일부:
 
 각 Phase에 `<!-- T1:auto -->`, `<!-- T2:deep -->` 같은 Tier 마커가 붙어있다. 이게 중요하다. Tier별로 리뷰 강도가 다르다:
 
-| Tier | 의미 | 실행 방식 | 리뷰 강도 |
-|------|------|-----------|-----------|
-| T1 | Scaffold (구조 정의) | 자동 진행 | Light |
-| T2 | Core (비즈니스 로직) | 세밀한 리뷰 | **Deep** |
-| T3 | Integration (Repository) | 자동 진행 | Medium |
-| T4 | Surface (Handler/E2E) | 자동 진행 | Light |
+| Tier | 의미                     | 실행 방식   | 리뷰 강도 |
+| ---- | ------------------------ | ----------- | --------- |
+| T1   | Scaffold (구조 정의)     | 자동 진행   | Light     |
+| T2   | Core (비즈니스 로직)     | 세밀한 리뷰 | **Deep**  |
+| T3   | Integration (Repository) | 자동 진행   | Medium    |
+| T4   | Surface (Handler/E2E)    | 자동 진행   | Light     |
 
 T2(비즈니스 로직)에서만 Deep Review를 하고, 나머지는 자동으로 넘긴다. 모든 코드를 같은 강도로 리뷰하는 건 비효율적이다. 핵심 로직에 집중하고, 나머지는 테스트가 통과하면 신뢰하는 거다.
 
@@ -344,6 +342,7 @@ API 최종 리뷰에서 사용하는 4개의 전문 에이전트 상세 구성�
 plan 문서의 체크박스 완료 상태를 검증합니다.
 
 출력 형식:
+
 - 완료율: X/Y (Z%)
 - 미완료 항목: (있다면 목록)
 - 판정: ✅ 완료 / ❌ 미완료 항목 있음
@@ -354,10 +353,10 @@ plan 문서의 체크박스 완료 상태를 검증합니다.
 
 확인 경로:
 tests/
-├── scripts/{feature}/test_{api_name}.sh
+├── scripts/{feature}/test\_{api_name}.sh
 └── fixtures/{feature}/{api_name}/
-    ├── valid_request.json
-    └── invalid_request.json
+├── valid_request.json
+└── invalid_request.json
 
 ## 3. Codex Agent
 
@@ -373,24 +372,24 @@ Tier 기반 리뷰:
 
 데이터베이스 쿼리 성능 및 최적화를 검토합니다.
 
-| 항목 | 설명 |
-|------|------|
-| N+1 쿼리 | 루프 내 개별 쿼리 실행 |
+| 항목        | 설명                           |
+| ----------- | ------------------------------ |
+| N+1 쿼리    | 루프 내 개별 쿼리 실행         |
 | 누락 인덱스 | WHERE, JOIN 절에 필요한 인덱스 |
-| 과다 조회 | SELECT * 사용, 불필요한 컬럼 |
-| 트랜잭션 | 적절한 범위 설정 |
+| 과다 조회   | SELECT \* 사용, 불필요한 컬럼  |
+| 트랜잭션    | 적절한 범위 설정               |
 ```
 
 이 4개가 **병렬로** 실행되기 때문에 시간이 크게 단축된다. 하나씩 순차적으로 돌리면 10분 걸릴 일이 병렬로 돌리면 3분이면 끝난다.
 
 ### 배포 판정 기준
 
-| Critical | Major | Minor | 판정 |
-|----------|-------|-------|------|
-| 0 | 0 | 0-2 | ✅ 배포 가능 |
-| 0 | 0 | 3+ | ⚠️ Minor 정리 권장 |
-| 0 | 1+ | - | ❌ Major 수정 필요 |
-| 1+ | - | - | ❌ Critical 수정 필수 |
+| Critical | Major | Minor | 판정                  |
+| -------- | ----- | ----- | --------------------- |
+| 0        | 0     | 0-2   | ✅ 배포 가능          |
+| 0        | 0     | 3+    | ⚠️ Minor 정리 권장    |
+| 0        | 1+    | -     | ❌ Major 수정 필요    |
+| 1+       | -     | -     | ❌ Critical 수정 필수 |
 
 ---
 
@@ -405,26 +404,26 @@ Tier 기반 리뷰:
 
 ### UseCase Implementation
 
-| Check | Question |
-|-------|----------|
-| Pure Functions | Are helper functions pure (no side effects)? |
-| Explicit Mutations | Are all mutations visible in main method? |
-| Error Wrapping | Are errors wrapped with context? |
-| No Business in Helpers | Is business logic in Execute, not helpers? |
+| Check                  | Question                                     |
+| ---------------------- | -------------------------------------------- |
+| Pure Functions         | Are helper functions pure (no side effects)? |
+| Explicit Mutations     | Are all mutations visible in main method?    |
+| Error Wrapping         | Are errors wrapped with context?             |
+| No Business in Helpers | Is business logic in Execute, not helpers?   |
 
 ### Pure Function Verification
 
 // GOOD: Pure function (data in, data out)
-func buildListOptions(input *ListPlansInput) plan.ListOptions {
-    return plan.ListOptions{
-        Limit:  input.Limit,
-        Status: input.Status,
-    }
+func buildListOptions(input \*ListPlansInput) plan.ListOptions {
+return plan.ListOptions{
+Limit: input.Limit,
+Status: input.Status,
+}
 }
 
 // BAD: Impure (modifies input)
 func buildListOptions(input *ListPlansInput, opts *plan.ListOptions) {
-    opts.Limit = input.Limit  // mutates!
+opts.Limit = input.Limit // mutates!
 }
 ```
 
