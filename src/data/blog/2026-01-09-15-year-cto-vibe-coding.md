@@ -5,7 +5,7 @@ summary: "바이브 코딩 열풍 속에서 '이게 맞나?' 싶은 순간들이
 pubDatetime: 2026-01-09T16:00:00+09:00
 updatedDatetime: 2026-01-09T16:00:00+09:00
 tags: ["에세이", "바이브코딩", "AI코딩", "개발"]
-featured: false
+featured: true
 draft: false
 ---
 
