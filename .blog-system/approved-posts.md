@@ -1,7 +1,7 @@
 ---
-version: "1.0.0"
-last_updated: "2026-01-09T16:30:00+09:00"
-total_posts: 45
+version: "1.1.0"
+last_updated: "2026-01-09T20:30:00+09:00"
+total_posts: 46
 ---
 
 # 승인된 글 목록
@@ -70,5 +70,6 @@ Style Learner가 학습 데이터로 사용하는 승인된 글 목록입니다.
 | 파일명 | 승인일 | 학습 반영 |
 |--------|--------|-----------|
 | 2026-01-09-15-year-cto-vibe-coding.md | 2026-01-09 | Y |
+| 2026-01-09-f1-leadership-james-vowles.md | 2026-01-09 | Y |
 
 ---
