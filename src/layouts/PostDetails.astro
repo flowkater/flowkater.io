@@ -294,6 +294,16 @@ const nextPost =
 
     <ShareLinks />
 
+    <section
+      id="comments"
+      class="mt-10"
+      aria-labelledby="comments-heading"
+      data-pagefind-ignore
+    >
+      <h2 id="comments-heading" class="sr-only">댓글</h2>
+      <div id="giscus-container"></div>
+    </section>
+
     <hr class="my-6 border-dashed" />
 
     <!-- Previous/Next Post Buttons -->
@@ -533,20 +543,41 @@ const nextPost =
   document.addEventListener("astro:after-swap", () =>
     window.scrollTo({ left: 0, top: 0, behavior: "instant" })
   );
-</script>
 
-<script
-  src="https://giscus.app/client.js"
-  data-repo="flowkater/flowkater.io"
-  data-repo-id="R_kgDOP1uhhQ"
-  data-category="General"
-  data-category-id="DIC_kwDOP1uhhc4Cv0oU"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-theme="preferred_color_scheme"
-  data-lang="ko"
-  crossorigin="anonymous"
-  async></script>
+  /** Load or re-load Giscus comments on navigation */
+  function loadGiscus() {
+    const container = document.getElementById("giscus-container");
+    if (!container) {
+      return;
+    }
+
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    script.dataset.repo = "flowkater/flowkater.io";
+    script.dataset.repoId = "R_kgDOP1uhhQ";
+    script.dataset.category = "General";
+    script.dataset.categoryId = "DIC_kwDOP1uhhc4Cv0oU";
+    script.dataset.mapping = "pathname";
+    script.dataset.strict = "0";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "bottom";
+    script.dataset.theme = "preferred_color_scheme";
+    script.dataset.lang = "ko";
+
+    container.appendChild(script);
+  }
+
+  loadGiscus();
+
+  if (!window.__giscusListenerAttached) {
+    document.addEventListener("astro:after-swap", () => {
+      loadGiscus();
+    });
+    window.__giscusListenerAttached = true;
+  }
+</script>
