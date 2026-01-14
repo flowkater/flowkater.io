@@ -451,11 +451,17 @@ const nextPost =
             const { svg } = await window.mermaid.render(id, definition);
             node.innerHTML = svg;
           } catch (error) {
-            console.error("Mermaid render failed", error);
+            if (import.meta.env.DEV) {
+              // eslint-disable-next-line no-console
+              console.error("Mermaid render failed", error);
+            }
           }
         }
       } catch (error) {
-        console.error("Mermaid render failed", error);
+        if (import.meta.env.DEV) {
+          // eslint-disable-next-line no-console
+          console.error("Mermaid render failed", error);
+        }
       }
     };
 
