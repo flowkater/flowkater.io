@@ -493,7 +493,11 @@ const nextPost =
     document.head.appendChild(script);
   }
   initializeMermaid();
-  document.addEventListener("astro:after-swap", initializeMermaid);
+  document.addEventListener("astro:after-swap", () => {
+    requestAnimationFrame(() => {
+      initializeMermaid();
+    });
+  });
 
   /** Attaches copy buttons to code blocks in the document,
    * allowing users to copy code easily. */

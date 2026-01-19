@@ -13,7 +13,7 @@ draft: false
 
 > 먼저 어그로 끌어서 미안하다. 나는 15년차 CTO가 아니다. (15년째 개발을 하고 있는 건 맞음) 그 다음 현재 CTO도 아니다. (작년에 퇴사함.)
 
-OpenCode (+oh-my-opencode) 열풍이 한번 지나갔다. [지난 글](https://flowkater.io/posts/claude-opus-free-opencode-antigravity/)에서 언급했듯이 ToS 이슈나 여러 이슈들로 아주 불태운 시기였다. 오늘 날짜로 막혔는데 개인적으로 우회하는 방법이 있긴 하나 지금 남은 작업들은 Claude Code만으로도 큰 문제가 없을 것 같아 그냥 Claude Code를 당분간은 쓰기로 결정했다.
+OpenCode (+oh-my-opencode) 열풍이 한번 지나갔다. 최근에 OpenCode는 ToS 이슈나 여러 이슈들로 아주 불태운 시기였다. 오늘 날짜로 막혔는데 개인적으로 우회하는 방법이 있긴 하나 지금 남은 작업들은 Claude Code만으로도 큰 문제가 없을 것 같아 그냥 Claude Code를 당분간은 쓰기로 결정했다.
 
 요즘 AI 코딩 도구들이 쏟아져 나오고 있다. Cursor, Windsurf, Copilot, 그리고 Claude Code까지. 어느 도구가 더 좋은지 비교하는 글도 많고, 각자 자기만의 워크플로우를 공유하는 글도 넘쳐난다. 모두가 "바이브 코딩"을 외치고, 프롬프트 몇 줄에 앱이 뚝딱 나오는 영상들이 유튜브와 트위터를 장식한다. "한 달 걸릴 일을 3시간 만에 끝냈어요!" 같은 이야기가 매일 들린다.
 
