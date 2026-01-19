@@ -412,7 +412,7 @@ const nextPost =
   /** Render Mermaid diagrams when code fences use ```mermaid */
   function initializeMermaid() {
     const mermaidBlocks = Array.from(
-      document.querySelectorAll("pre[data-language='mermaid']")
+      document.querySelectorAll("pre:has(code.language-mermaid)")
     );
 
     if (!mermaidBlocks.length) {
