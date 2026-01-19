@@ -42,16 +42,18 @@ const { Content } = await render(post);
 
 let ogImageUrl: string | undefined;
 
-// Determine OG image source - Priority: 1) Frontmatter 2) Dynamic generation
+// Determine OG image source - Priority: 1) Frontmatter 2) Pre-generated static images
 if (typeof initOgImage === "string") {
   ogImageUrl = initOgImage; // Remote OG image (absolute URL)
 } else if (initOgImage?.src) {
   ogImageUrl = initOgImage.src; // Local asset
 }
 
-// Use dynamic OG image if enabled and no custom ogImage provided
+// Use pre-generated static OG image in /public/og/ directory
+// Generated during build time by generate-og-images integration
 if (!ogImageUrl && SITE.dynamicOgImage) {
-  ogImageUrl = `${getPath(post.id, post.filePath)}/index.png`;
+  const slug = getPath(post.id, post.filePath, false).split("/").pop();
+  ogImageUrl = `/og/${slug}.png`;
 }
 
 const summary = summaryFromFrontmatter ?? description;
