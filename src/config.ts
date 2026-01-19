@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://flowkater.io",
   desc: "Dev retros & notes by Tony",
   title: "Flowkater.io",
-  ogImage: "desk-og.jpg",
+  ogImage: undefined, // 동적 OG 이미지만 사용 (desk-og.jpg 제거)
   lightAndDarkMode: true,
   postPerIndex: 6,
   postPerPage: 10,

@@ -9,6 +9,8 @@ import EditPost from "@/components/EditPost.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
 import BackButton from "@/components/BackButton.astro";
 import BackToTopButton from "@/components/BackToTopButton.astro";
+import GoogleAnalytics from "@/components/google-analytics.astro";
+import PostHog from "@/components/posthog.astro";
 import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
@@ -40,14 +42,14 @@ const { Content } = await render(post);
 
 let ogImageUrl: string | undefined;
 
-// Determine OG image source
+// Determine OG image source - Priority: 1) Frontmatter 2) Dynamic generation
 if (typeof initOgImage === "string") {
   ogImageUrl = initOgImage; // Remote OG image (absolute URL)
 } else if (initOgImage?.src) {
   ogImageUrl = initOgImage.src; // Local asset
 }
 
-// Use dynamic OG image if enabled and no remote|local ogImage
+// Use dynamic OG image if enabled and no custom ogImage provided
 if (!ogImageUrl && SITE.dynamicOgImage) {
   ogImageUrl = `${getPath(post.id, post.filePath)}/index.png`;
 }
@@ -75,12 +77,10 @@ const estimatedReadingTime = wordCount
   ? Math.max(1, Math.round(wordCount / 200))
   : null;
 
-// Resolve OG image URL (or fallback to SITE.ogImage / default `og.png`)
+// Resolve OG image URL (동적 생성 또는 frontmatter 지정 이미지만 사용)
 const ogImage = ogImageUrl
   ? new URL(ogImageUrl, Astro.url.origin).href
-  : SITE.ogImage
-    ? new URL(`/${SITE.ogImage}`, Astro.url.origin).href
-    : new URL("/og.png", Astro.url.origin).href;
+  : new URL("/og.png", Astro.url.origin).href; // 동적/커스텀 이미지 모두 없는 경우만 기본값 사용
 
 const postUrl = new URL(getPath(post.id, post.filePath), SITE.website).href;
 
@@ -206,6 +206,8 @@ const nextPost =
 ---
 
 <Layout {...layoutProps}>
+  <GoogleAnalytics slot="head" />
+  <PostHog slot="head" />
   <script
     slot="head"
     type="application/ld+json"
