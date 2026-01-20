@@ -224,5 +224,8 @@ AI가 개발 속도를 빠르게 해주는 시대일수록, 이런 선택과 집
 - [해결 할 프로덕트 - 라비 메타 저 / 이용빈 역](https://www.yes24.com/product/goods/123430681)
 - [린 스타트업 - 고객 질문](https://flowkater.io/posts/2019-12-lean-customer-questions/)
 - [Continuous Discovery Habits 정리 노트](https://flowkater.io/posts/2025-03-continuous-discovery-notes/)
+- Ellie's 독서 노트
+
+---
 
 > Thanks to Ellie. 이번 글은 "해결 할 프로덕트" 스터디 자료를 준비해 온 Ellie 의 독서 노트에서 영감을 받았다.
