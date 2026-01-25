@@ -8,10 +8,8 @@ updatedDatetime: 2026-01-19T21:32:33+09:00
 canonicalURL: "https://flowkater.io/posts/2026-01-19-pangyo-it-episode-1/"
 tags:
   - "소설"
-# ogImage: "/assets/og/sample.png" # (선택) 커스텀 OG 이미지 경로. 사용하지 않으면 이 줄을 삭제하세요.
 featured: true
 draft: false
-slug: "pangyo-it-episode-1"
 keywords:
   - "IT 대기업"
   - "야근"

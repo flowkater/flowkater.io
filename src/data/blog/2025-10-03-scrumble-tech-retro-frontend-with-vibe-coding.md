@@ -10,7 +10,6 @@ tags: ["프로젝트", "프론트엔드", "바이브코딩", "scrumble"]
 # ogImage: "/assets/og/sample.png" # (선택) 커스텀 OG 이미지 경로. 사용하지 않으면 이 줄을 삭제하세요.
 featured: true
 draft: false
-slug: "scrumble-tech-retro-frontend-with-vibe-coding"
 timezone: "Asia/Seoul"
 faq:
   - question: "Scrumble 프론트엔드에서 실시간 기능은 어떻게 구현했나요?"

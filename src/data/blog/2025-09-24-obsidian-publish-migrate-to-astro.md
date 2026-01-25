@@ -7,7 +7,6 @@ updatedDatetime: 2025-09-24T14:18:38+09:00
 tags: ["기록", "블로그"]
 featured: false
 draft: false
-slug: "obsidian-publish-migrate-to-astro"
 faq:
   - question: "Obsidian Publish의 문제점은?"
     answer: "SEO가 약해서 유입이 크게 줄었고, frontmatter를 강제하지 않아 메타데이터 관리가 어렵습니다. Google AdSense나 이벤트 트래킹 같은 커스텀이 안 되고, 무엇보다 댓글 기능이 없습니다."
