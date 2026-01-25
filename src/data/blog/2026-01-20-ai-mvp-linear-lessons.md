@@ -7,6 +7,13 @@ updatedDatetime: 2026-01-20T14:30:00+09:00
 tags: ["프로덕트", "디스커버리"]
 featured: true
 draft: false
+faq:
+  - question: "현대의 MVP는 과거와 어떻게 다른가요?"
+    answer: "과거 MVP는 '빨리, 싸게 아이디어를 검증하는 것'이었지만, 현대의 MVP는 '기존 제품보다 낫다는 걸 증명'해야 합니다. 대부분의 카테고리가 포화 상태이므로, 치열하게 다듬은 경쟁력 있는 제품이어야 합니다."
+  - question: "Linear가 초기에 타겟을 좁힌 이유는?"
+    answer: "리소스 분산을 막고 명확한 피드백을 얻기 위해서입니다. Linear는 '작은 스타트업의 IC(Individual Contributor)들'로 타겟을 극도로 좁혔고, Fast·Modern·Multiplayer 세 가지에만 집중했습니다."
+  - question: "고기대 고객(High-Expectation Customer)이란?"
+    answer: "당신의 제품이 선택지가 아니라 생명줄 같은 느낌의 고객입니다. '이게 없으면 진짜 문제가 된다'고 느끼는 강력한 동기와 높은 기대를 가진 고객을 찾아야 합니다."
 ---
 
 ## 들어가며

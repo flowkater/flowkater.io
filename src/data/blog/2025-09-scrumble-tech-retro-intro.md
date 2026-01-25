@@ -6,6 +6,13 @@ pubDatetime: 2025-09-21T09:00:00+09:00
 updatedDatetime: 2025-09-21T09:00:00+09:00
 tags: ["프로젝트", "golang", "scrumble"]
 draft: false
+faq:
+  - question: "왜 Golang을 선택했나요?"
+    answer: "스크립트처럼 가볍게 코딩하면서 컴파일 언어의 정적 타이핑과 성능을 가져갈 수 있습니다. goroutine으로 대표되는 실시간 처리와 성능 면에서 운영에도 수월하고, 당근마켓 같은 큰 기업에서도 검증된 스택입니다."
+  - question: "Golang이 해외에서 'Boring'하다고 불리는 이유는?"
+    answer: "언어가 단순하기 때문입니다. Java에 비해 한없이 단촐하고, 대표적인 풀 프레임워크나 ORM도 없습니다. 함수형 언어의 상수 불변성도 없고, try-catch 대신 에러를 명시적으로 tuple-return 해야 합니다."
+  - question: "Next.js를 선택한 이유는?"
+    answer: "국밥 픽입니다. React 경험이 있고, 풀스택 할 때 고민 없이 선택할 수 있는 스택이며, 자료가 풍부합니다. 다만 AI 바이브 코딩 시대에 React/Hook이 최선인지는 고민이 되었습니다."
 ---
 
 # 들어가며

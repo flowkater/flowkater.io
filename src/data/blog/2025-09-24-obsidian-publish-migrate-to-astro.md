@@ -8,6 +8,13 @@ tags: ["기록", "블로그"]
 featured: false
 draft: false
 slug: "obsidian-publish-migrate-to-astro"
+faq:
+  - question: "Obsidian Publish의 문제점은?"
+    answer: "SEO가 약해서 유입이 크게 줄었고, frontmatter를 강제하지 않아 메타데이터 관리가 어렵습니다. Google AdSense나 이벤트 트래킹 같은 커스텀이 안 되고, 무엇보다 댓글 기능이 없습니다."
+  - question: "왜 Astro를 선택했나요?"
+    answer: "content-driven 웹사이트에 최적화된 프레임워크로 렌더링이 빠르고 SEO 설정이 가능합니다. SSR 지원, 테마 커스터마이징 가능, 그리고 CloudFlare Pages에서 무료 배포할 수 있습니다."
+  - question: "마이그레이션에서 가장 어려웠던 점은?"
+    answer: "Obsidian은 frontmatter가 없어서 파일 생성 날짜를 찾아가며 하나하나 포맷에 맞춰 교체해야 했습니다. 폴더 트리 기반 마크다운을 flat 구조로 변환하는 스크립트도 Codex로 자동화했습니다."
 ---
 
 Obsidian 은 개인 위키와 작성을 위해 굉장히 좋은 툴이고 제텔카스텐과 문서화에 관심이 많다면 요즈음 대부분 권하는 문서 에디터 툴이다. 나는 Notion 을 별로 좋아하지 않았고 Roam 리서치는 좀 어렵다는 느낌이 있었는데, Obsidian 이 약간 이쪽 문서툴에서 표준이 되어가는 느낌을 받으면서 Obsidian 으로 과감하게 옮겼고, 이전에 gatsbyjs 로 잘 사용하고 있던 블로그 플랫폼도 Obsidian Publish 를 결제해서 모두 마이그레이션 했다.

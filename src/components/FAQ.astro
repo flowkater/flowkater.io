@@ -1,0 +1,24 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="faq-section my-8" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="mb-4 text-xl font-semibold">자주 묻는 질문</h2>
+  <dl class="space-y-4">
+    {items.map((item) => (
+      <div class="border-l-2 border-accent pl-4">
+        <dt class="font-medium text-accent">{item.question}</dt>
+        <dd class="mt-1 text-foreground/80">{item.answer}</dd>
+      </div>
+    ))}
+  </dl>
+</section>

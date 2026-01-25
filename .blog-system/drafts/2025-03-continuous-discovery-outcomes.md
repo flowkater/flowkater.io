@@ -1,5 +1,5 @@
 ---
-title: "3. 산출물이 아닌 성과에 집중하기 - Continuous Discovery Habits"
+title: "3. Focusing On Outcomes Over Outputs"
 description: "결과 중심 사고로 전환하는 방법. 비즈니스 결과, 제품 결과, 트랙션 지표의 차이를 이해하고 리더와 팀이 어떻게 목표를 협상해야 하는지 정리했다."
 summary: "tails.com 팀의 리텐션 개선 사례를 시작으로, 왜 결과 중심 사고가 중요한지, 비즈니스 결과와 제품 결과를 어떻게 구분해야 하는지 살펴본다. SMART 목표의 한계, 프로덕트 트리오를 위한 실전 가이드, 그리고 흔한 안티 패턴까지 정리했다."
 pubDatetime: 2025-03-03T09:00:00+09:00

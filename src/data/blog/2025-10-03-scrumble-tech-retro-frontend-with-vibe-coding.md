@@ -12,6 +12,13 @@ featured: true
 draft: false
 slug: "scrumble-tech-retro-frontend-with-vibe-coding"
 timezone: "Asia/Seoul"
+faq:
+  - question: "Scrumble 프론트엔드에서 실시간 기능은 어떻게 구현했나요?"
+    answer: "Centrifugo 클라이언트(centrifuge)로 WebSocket 연동하여 자동 재연결과 채널 유지를 구현했습니다. 실시간 알림, 이모지, 댓글 모두 이 방식으로 처리합니다."
+  - question: "수직 슬라이스(Vertical Slice) 아키텍처란?"
+    answer: "기능별로 UI, 훅, 서비스, 스토어, 타입을 한 폴더에 묶는 구조입니다. 도메인 단위로 코드를 구성해 관련 코드를 한 곳에서 관리할 수 있습니다. Scrumble에서는 src/features/* 디렉토리로 구성했습니다."
+  - question: "iOS HEIC 이미지는 어떻게 처리하나요?"
+    answer: "heic2any와 libheif-js를 사용해 HEIC 포맷을 웹 포맷으로 변환합니다. Cloudflare R2 프리사인드 업로드와 함께 사용하여 이미지 업로드를 처리합니다."
 ---
 
 # Scrumble 프론트엔드 구현 사항 요약

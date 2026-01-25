@@ -1,5 +1,5 @@
 ---
-title: "1. Continuous Discovery란 무엇이고 왜 필요한가 - Continuous Discovery Habits"
+title: "1. The What And Why Of Continuous Discovery"
 description: "Continuous Discovery가 필요한 이유와 역사, 필수 마인드셋, 주간 고객 접점을 유지하는 실무 정의를 정리했다. 왜 Discovery가 Delivery만큼 중요한지, 프로덕트 팀이 어떤 사고방식을 가져야 하는지 개발자 관점에서 풀어본다."
 summary: "모든 제품 팀은 결국 두 가지 일을 한다. 무엇을 만들지 결정하는 것(Discovery), 그리고 실제로 만들어내는 것(Delivery). 그런데 많은 회사가 Delivery에만 집중하고 Discovery는 소홀히 한다. 이 글에서는 Continuous Discovery가 왜 필요한지, 어떤 역사를 거쳐 발전해왔는지, 그리고 팀이 갖춰야 할 여섯 가지 마인드셋을 정리한다."
 pubDatetime: 2025-03-01T09:00:00+09:00

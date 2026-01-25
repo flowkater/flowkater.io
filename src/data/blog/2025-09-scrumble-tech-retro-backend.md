@@ -7,6 +7,13 @@ updatedDatetime: 2025-09-22T09:00:00+09:00
 tags: ["프로젝트", "golang", "백엔드", "scrumble"]
 featured: false
 draft: false
+faq:
+  - question: "Scrumble 백엔드의 핵심 기술 스택은?"
+    answer: "Go 1.23+, Fiber v2 웹 프레임워크, PostgreSQL 15 데이터베이스, EntGo ORM과 Atlas 마이그레이션, Redis 7 캐시, Centrifugo WebSocket 실시간 처리, Wire 의존성 주입을 사용합니다."
+  - question: "왜 Centrifugo를 선택했나요?"
+    answer: "실시간 업데이트(알림, 이모지, 댓글)가 필요한 SNS 구조였기 때문입니다. Centrifugo는 Go와 잘 통합되고, 자동 재연결, 채널 유지 등 안정적인 WebSocket 기능을 제공합니다."
+  - question: "EntGo를 ORM으로 선택한 이유는?"
+    answer: "Go에는 대표적인 ORM이 없지만, EntGo는 타입 세이프한 쿼리 빌더와 Atlas 기반 마이그레이션을 제공합니다. 워크스페이스, 멤버, 포스트, 댓글 등 복잡한 도메인 관계를 정의하기에 적합했습니다."
 ---
 
 # Scrumble 백엔드 기술 회고

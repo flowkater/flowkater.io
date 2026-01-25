@@ -36,6 +36,7 @@ const {
   timezone,
   tags,
   hideEditPost,
+  faq,
 } = post.data;
 
 const { Content } = await render(post);
@@ -163,6 +164,19 @@ const breadcrumbStructuredData = {
   ],
 };
 
+const faqStructuredData = faq && faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map(item => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+} : null;
+
 const layoutProps = {
   title: `${title} | ${SITE.title}`,
   author,
@@ -216,6 +230,14 @@ const nextPost =
     is:inline
     set:html={JSON.stringify(breadcrumbStructuredData)}
   />
+  {faqStructuredData && (
+    <script
+      slot="head"
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(faqStructuredData)}
+    />
+  )}
   {keywordString && (
     <meta slot="head" name="keywords" content={keywordString} />
   )}

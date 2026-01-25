@@ -1,5 +1,5 @@
 ---
-title: "2. Continuous Discovery를 위한 프레임워크 - Continuous Discovery Habits"
+title: "2. A Common Framework For Continuous Discovery"
 description: "Teresa Torres의 기회-솔루션 트리 개념을 통해 비즈니스 성과와 고객 기회를 연결하고 의사결정을 구조화하는 Continuous Discovery 프레임워크를 정리했다. 웰스파고 사례부터 OST의 7가지 효과까지."
 summary: "비즈니스 요구와 고객 가치가 충돌하는 순간이 있다. 이 글에서는 Teresa Torres의 기회-솔루션 트리(OST) 개념을 정리하며, 어떻게 고객 중심적으로 문제를 프레이밍하고 비정형 문제를 구조화할 수 있는지 살펴본다. 디스커버리를 단순한 고객 인터뷰가 아닌 성과 달성을 위한 체계적 접근으로 바라보는 관점을 다룬다."
 pubDatetime: 2025-03-02T09:00:00+09:00
