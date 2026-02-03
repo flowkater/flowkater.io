@@ -72,5 +72,6 @@ Style Learner가 학습 데이터로 사용하는 승인된 글 목록입니다.
 | 2026-01-09-15-year-cto-vibe-coding.md | 2026-01-09 | Y |
 | 2026-01-09-f1-leadership-james-vowles.md | 2026-01-09 | Y |
 | 2026-01-25-no-victory-no-future.md | 2026-01-25 | Y |
+| 2026-02-03-book-review-dolpa-meditations.md | 2026-02-03 | Y |
 
 ---
