@@ -25,7 +25,9 @@ ogImage: ../../assets/blog/the-obstacle-is-the-way-cover.jpeg
 ![돌파력](/assets/the-obstacle-is-the-way-cover.jpeg)
 
 **돌파력 - 시련을 성장으로 이끄는 절대 불변의 법칙**
+
 라이언 홀리데이 저 / 안종설 역 | 심플라이프 | 2024년 11월 11일
+
 원제: _The Obstacle Is the Way_
 
 ## 들어가며

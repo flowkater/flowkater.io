@@ -5,7 +5,7 @@ summary: "21년 파트타임으로 합류해 30명 규모의 R&D 본부를 세�
 pubDatetime: 2025-04-10T09:00:00+09:00
 updatedDatetime: 2025-04-10T09:00:00+09:00
 tags: ["회고", "프로젝트회고", "CTO"]
-featured: true
+featured: false
 draft: false
 ---
 
