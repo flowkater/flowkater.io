@@ -17,7 +17,7 @@ keywords:
     "회복",
   ]
 timezone: "Asia/Seoul"
-ogImage: /assets/the-obstacle-is-the-way-cover.jpeg
+ogImage: ../../assets/blog/the-obstacle-is-the-way-cover.jpeg
 ---
 
 > 해당 리뷰는 readmeleadme (이하 릿미릿미) 독서 스터디 리뷰입니다.
