@@ -8,7 +8,7 @@ updatedDatetime: 2026-01-19T21:32:33+09:00
 canonicalURL: "https://flowkater.io/posts/2026-01-19-pangyo-it-episode-1/"
 tags:
   - "소설"
-featured: true
+featured: false
 draft: false
 keywords:
   - "IT 대기업"

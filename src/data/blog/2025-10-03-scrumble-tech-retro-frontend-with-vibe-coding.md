@@ -8,7 +8,7 @@ updatedDatetime: 2025-10-03T21:24:55+09:00
 canonicalURL: "https://flowkater.io/posts/2025-10-03-scrumble-tech-retro-frontend-with-vibe-coding/"
 tags: ["프로젝트", "프론트엔드", "바이브코딩", "scrumble"]
 # ogImage: "/assets/og/sample.png" # (선택) 커스텀 OG 이미지 경로. 사용하지 않으면 이 줄을 삭제하세요.
-featured: true
+featured: false
 draft: false
 timezone: "Asia/Seoul"
 faq:

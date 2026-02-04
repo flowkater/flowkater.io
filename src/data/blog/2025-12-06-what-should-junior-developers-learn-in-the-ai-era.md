@@ -11,7 +11,7 @@ tags:
   - "커리어"
   - "AI"
 # ogImage: "/assets/og/sample.png" # (선택) 커스텀 OG 이미지 경로. 사용하지 않으면 이 줄을 삭제하세요.
-featured: true
+featured: false
 draft: false
 keywords:
   - "신입 개발자"

@@ -5,7 +5,7 @@ summary: "고객 개발과 MVP 개발을 할 때 Linear의 사례는 큰 레슨�
 pubDatetime: 2026-01-20T14:30:00+09:00
 updatedDatetime: 2026-01-20T14:30:00+09:00
 tags: ["프로덕트", "디스커버리"]
-featured: true
+featured: false
 draft: false
 faq:
   - question: "현대의 MVP는 과거와 어떻게 다른가요?"
