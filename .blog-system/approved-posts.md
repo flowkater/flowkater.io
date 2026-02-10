@@ -1,7 +1,7 @@
 ---
-version: "1.3.0"
-last_updated: "2026-02-08T10:00:00+09:00"
-total_posts: 48
+version: "1.4.0"
+last_updated: "2026-02-10T18:00:00+09:00"
+total_posts: 49
 ---
 
 # 승인된 글 목록
@@ -74,5 +74,6 @@ Style Learner가 학습 데이터로 사용하는 승인된 글 목록입니다.
 | 2026-01-25-no-victory-no-future.md | 2026-01-25 | Y |
 | 2026-02-03-book-review-dolpa-meditations.md | 2026-02-03 | Y |
 | 2026-02-08-superpowers-introduction.md | 2026-02-08 | Y |
+| 2026-02-10-reading-tech-articles-three-pass-method.md | 2026-02-10 | Y |
 
 ---
