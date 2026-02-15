@@ -29,13 +29,9 @@ keywords:
   ]
 ---
 
-# AI 에이전트 자비스, 내 두 번째 두뇌가 되기까지 — OpenClaw 실전 활용기
+## 들어가며
 
 ![ai-jarvis](/assets/ai-jarvis-thumbnail.png)
-
----
-
-## 들어가며
 
 > "Good morning, Sir. It's 8 AM. The weather in Seoul is clear with scattered clouds."
 > — 아이언맨 시리즈 중 J.A.R.V.I.S.
