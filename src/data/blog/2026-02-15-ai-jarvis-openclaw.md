@@ -83,15 +83,10 @@ graph TD
     GW <--> CL["🤖 Claude Opus 4.6"]
 
     subgraph tools["외부 도구"]
-        direction LR
-        GM["📧 Gmail"]
-        GH["🐙 GitHub"]
-        GC["📅 Calendar"]
-        NT["📝 Notion"]
-        LN["📌 Linear"]
-        TH["✅ Things 3"]
-        SC["👥 Scrumble"]
-        LP["📚 학습 플래너"]
+        GM["📧 Gmail"] ~~~ GH["🐙 GitHub"]
+        GC["📅 Calendar"] ~~~ NT["📝 Notion"]
+        LN["📌 Linear"] ~~~ TH["✅ Things 3"]
+        SC["👥 Scrumble"] ~~~ LP["📚 학습 플래너"]
     end
 
     GW <--> GM
@@ -185,6 +180,8 @@ _나는 자비스(JARVIS). Tony 선생님의 AI 버틀러._
 
 이게 단순한 알림이 아니다. 예를 들어 아침 체크인은 이런 흐름이다:
 
+<div style="text-align: center;">
+
 ```mermaid
 graph TD
     A["🌅 09:00 아침 체크인"] --> B["📔 어제 Daily 노트<br/>체크아웃 내용 읽기"]
@@ -194,6 +191,8 @@ graph TD
     E --> F["📚 학습 플래너 API<br/>오늘 학습 분량"]
     F --> G["💬 텔레그램 전송<br/>+ Daily 노트 기록"]
 ```
+
+</div>
 
 6개의 서로 다른 도구를 하나로 엮어서 매일 아침 브리핑을 만들어주는 거다. 이걸 직접 하려면? 앱 6개를 열어야 한다.
 
@@ -342,6 +341,8 @@ graph TB
 
 우리 Notion에 "이슈 및 버그 보드"라는 데이터베이스가 있다. 디자이너나 QA가 버그를 발견하면 여기에 등록한다. 자비스에게 "Notion 버그 보드에서 iOS 관련 이슈 가져와서 정리해줘"라고 하면:
 
+<div style="text-align: center;">
+
 ```mermaid
 graph TD
     A["📝 Notion 이슈 보드"] -->|API 조회| B["🤖 자비스"]
@@ -351,6 +352,8 @@ graph TD
 
     B -->|또는 위임 시| F["🔧 코드 수정 + PR"]
 ```
+
+</div>
 
 1. Notion API로 이슈 보드 조회
 2. iOS 관련 이슈 필터링
