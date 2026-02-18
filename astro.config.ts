@@ -16,6 +16,9 @@ import { SITE } from "./src/config";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  redirects: {
+    "/home": "/",
+  },
   integrations: [
     mdx(),
     sitemap({
