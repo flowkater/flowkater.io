@@ -4,7 +4,7 @@ description: "OpenClaw 프레임워크로 24시간 AI 에이전트 자비스를 
 summary: "ChatGPT에 질문하던 수준에서 24시간 AI 버틀러 자비스와 함께 일하는 수준까지, 6개월의 여정을 정리했다. OpenClaw 프레임워크 설정, 10개 크론잡 자동화, 분산 투두 통합, 팀 멀티에이전트 확장, 옵시디언 온톨로지로 '내 컨텍스트를 아는 AI' 만들기까지."
 pubDatetime: 2026-02-15T12:00:00+09:00
 tags: ["기술", "AI에이전트", "생산성", "AI코딩"]
-category: "study"
+category: "essay"
 featured: true
 draft: false
 ogImage: ../../assets/blog/ai-jarvis-thumbnail.png

@@ -5,7 +5,7 @@ summary: "약 1년 반 정도 쓰던 Obsidian Publish 에서 Astro 기반 블로
 pubDatetime: 2025-09-24T14:18:38+09:00
 updatedDatetime: 2025-09-24T14:18:38+09:00
 tags: ["기록", "블로그"]
-category: "retrospect"
+category: "essay"
 featured: false
 draft: false
 faq:

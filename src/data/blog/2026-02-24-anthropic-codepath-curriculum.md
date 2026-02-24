@@ -4,10 +4,20 @@ description: "Anthropic과 CodePath가 만든 AI Engineering 커리큘럼을 주
 summary: "Claude Code를 만든 Anthropic이 정작 가르치는 건 Claude Code를 의심하는 법이다. 3단계 30주 커리큘럼을 뜯어보면 'AI가 짠 코드에서 버그를 찾아라'가 첫 과제이고, 마지막은 실제 오픈소스 PR이다. 비판적 코드 평가, 대규모 코드베이스 이해, 프로덕션 관심사, 실전 기여 — 이 4가지가 Anthropic이 바라보는 AI Native Engineer의 조건이다. 앤드류 응의 2026년 Stanford 강연과 교차하며, AI 시대 엔지니어에게 진짜 필요한 것이 무엇인지 파고든다."
 pubDatetime: 2026-02-24T14:00:00+09:00
 tags: ["AI코딩", "에세이", "교육", "커리어"]
-category: "study"
+category: "essay"
 featured: false
 draft: true
-keywords: ["AI Native Engineer", "Anthropic", "CodePath", "AI 교육", "커리큘럼", "비판적 코드 읽기", "앤드류 응", "제품 엔지니어"]
+keywords:
+  [
+    "AI Native Engineer",
+    "Anthropic",
+    "CodePath",
+    "AI 교육",
+    "커리큘럼",
+    "비판적 코드 읽기",
+    "앤드류 응",
+    "제품 엔지니어",
+  ]
 faq:
   - question: "Anthropic CodePath 커리큘럼은 무엇인가요?"
     answer: "Anthropic과 CodePath가 공동 개발한 3단계 30주 AI Engineering 교육과정입니다. Claude Code를 도구로 활용하되, AI 생성 코드를 비판적으로 평가하는 훈련에 중점을 둡니다."

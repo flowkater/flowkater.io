@@ -6,7 +6,7 @@ pubDatetime: 2020-03-13T11:03:59+09:00
 updatedDatetime: 2020-03-13T11:03:59+09:00
 tags: ["프로젝트", "백엔드", "프론트엔드"]
 draft: false
-category: "study"
+category: "retrospect"
 keywords:
   [
     "DataColon",
