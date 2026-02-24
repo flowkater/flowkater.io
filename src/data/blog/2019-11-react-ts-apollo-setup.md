@@ -6,7 +6,7 @@ pubDatetime: 2019-11-22T16:11:59+09:00
 updatedDatetime: 2019-11-22T16:11:59+09:00
 tags: ["개발", "프론트엔드", "React"]
 draft: false
-category: "frontend"
+category: "study"
 keywords: ["TypeScript","Apollo","Styled Components","프론트엔드","리액트"]
 ---
 

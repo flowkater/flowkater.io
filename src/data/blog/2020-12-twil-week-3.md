@@ -6,7 +6,7 @@ pubDatetime: 2020-12-22T14:12:59+09:00
 updatedDatetime: 2020-12-22T14:12:59+09:00
 tags: ["기록", "TIL"]
 draft: false
-category: "twil"
+category: "study"
 keywords: ["twil","TIL","로그","회고"]
 ---
 

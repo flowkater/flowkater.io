@@ -6,7 +6,7 @@ pubDatetime: 2019-09-20T12:11:59+09:00
 updatedDatetime: 2019-09-20T12:11:59+09:00
 tags: ["독서", "경영"]
 draft: false
-category: "book"
+category: "review"
 keywords: ["아마존","amazon","제프 베조스","책 리뷰","책"]
 ---
 

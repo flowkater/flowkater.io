@@ -88,3 +88,57 @@ export const SHARE_LINKS: Social[] = [
     icon: IconMail,
   },
 ] as const;
+
+// ── Categories ──────────────────────────────────
+export type CategorySlug =
+  | "essay"
+  | "review"
+  | "fiction"
+  | "retrospect"
+  | "study";
+
+export interface CategoryConfig {
+  slug: CategorySlug;
+  label: string;
+  icon: string;
+  description: string;
+}
+
+export const CATEGORIES: CategoryConfig[] = [
+  {
+    slug: "essay",
+    label: "에세이",
+    icon: "✍️",
+    description: "생각, 의견, 리더십, AI 시대론",
+  },
+  {
+    slug: "review",
+    label: "리뷰",
+    icon: "📖",
+    description: "독서, 영상, 컨퍼런스, 서비스 후기",
+  },
+  {
+    slug: "fiction",
+    label: "픽션",
+    icon: "📕",
+    description: "허공을 미는 사람들 (판교 소설)",
+  },
+  {
+    slug: "retrospect",
+    label: "회고",
+    icon: "🔄",
+    description: "월간/연간/프로젝트 회고",
+  },
+  {
+    slug: "study",
+    label: "스터디",
+    icon: "🔬",
+    description: "기술 아티클, 튜토리얼, 학습 정리",
+  },
+];
+
+export function getCategoryConfig(
+  slug: CategorySlug
+): CategoryConfig | undefined {
+  return CATEGORIES.find(c => c.slug === slug);
+}

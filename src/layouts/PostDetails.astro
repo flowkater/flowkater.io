@@ -16,6 +16,7 @@ import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { SITE } from "@/config";
+import { getCategoryConfig } from "@/constants";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -35,9 +36,12 @@ const {
   modDatetime,
   timezone,
   tags,
+  category,
   hideEditPost,
   faq,
 } = post.data;
+
+const categoryConfig = getCategoryConfig(category);
 
 const { Content } = await render(post);
 
@@ -64,7 +68,7 @@ const keywordsList =
     ? post.data.keywords
     : tags;
 const keywordString = keywordsList.filter(Boolean).join(", ");
-const articleSection = tags[0] ?? "blog";
+const articleSection = categoryConfig?.label ?? tags[0] ?? "blog";
 const inLanguage = SITE.lang ?? "ko";
 const postBodyCandidate = (post as { body?: unknown }).body;
 const rawBody = typeof postBodyCandidate === "string" ? postBodyCandidate : "";
@@ -256,6 +260,16 @@ const nextPost =
     ]}
     data-pagefind-body
   >
+    {
+      categoryConfig && (
+        <a
+          href={`/categories/${categoryConfig.slug}/`}
+          class="mb-2 inline-block text-sm font-medium opacity-70 hover:opacity-100"
+        >
+          {categoryConfig.icon} {categoryConfig.label}
+        </a>
+      )
+    }
     <h1
       transition:name={slugifyStr(title)}
       class="inline-block text-2xl font-bold text-accent sm:text-3xl"

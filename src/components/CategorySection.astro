@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { CategoryConfig } from "@/constants";
+import { getPath } from "@/utils/getPath";
+import Datetime from "./Datetime.astro";
+import LinkButton from "./LinkButton.astro";
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+
+export interface Props {
+  category: CategoryConfig;
+  posts: CollectionEntry<"blog">[];
+}
+
+const { category, posts } = Astro.props;
+const latestPosts = posts.slice(0, 3);
+---
+
+<section class="pt-6 pb-4">
+  <h2 class="mb-4 text-xl font-semibold tracking-wide">
+    {category.icon} {category.label}
+  </h2>
+  <ul class="space-y-3">
+    {
+      latestPosts.map(post => {
+        const { title, description, pubDatetime, modDatetime, timezone } = post.data;
+        return (
+          <li>
+            <a
+              href={getPath(post.id, post.filePath)}
+              class="inline-block text-accent decoration-dashed underline-offset-4 hover:underline"
+            >
+              {title}
+            </a>
+            <Datetime {pubDatetime} {modDatetime} {timezone} size="sm" />
+            <p class="text-base opacity-70">{description}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
+  <div class="mt-3">
+    <LinkButton href={`/categories/${category.slug}/`}>
+      {category.label} 전체보기
+      <IconArrowRight class="inline-block rtl:-rotate-180" />
+    </LinkButton>
+  </div>
+</section>

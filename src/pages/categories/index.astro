@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Main from "@/layouts/Main.astro";
+import PostHogLayout from "@/layouts/PostHogLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import getPostsByCategory from "@/utils/getPostsByCategory";
+import { CATEGORIES } from "@/constants";
+
+const posts = await getCollection("blog");
+---
+
+<PostHogLayout>
+  <Header />
+  <Main pageTitle="Categories" pageDesc="All the categories used in posts.">
+    <ul class="space-y-4">
+      {
+        CATEGORIES.map(cat => {
+          const count = getPostsByCategory(posts, cat.slug).length;
+          return (
+            <li>
+              <a
+                href={`/categories/${cat.slug}/`}
+                class="group flex items-baseline gap-3 rounded-md border border-border px-4 py-3 transition-colors hover:border-accent/60 hover:bg-accent/5"
+              >
+                <span class="text-2xl">{cat.icon}</span>
+                <div class="flex-1">
+                  <span class="text-lg font-medium text-accent group-hover:underline">
+                    {cat.label}
+                  </span>
+                  <span class="ml-2 text-sm opacity-60">({count})</span>
+                  <p class="text-sm opacity-70">{cat.description}</p>
+                </div>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </Main>
+  <Footer />
+</PostHogLayout>

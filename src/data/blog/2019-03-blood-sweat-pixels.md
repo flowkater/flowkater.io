@@ -6,7 +6,7 @@ pubDatetime: 2019-03-08T09:00:00+09:00
 updatedDatetime: 2019-03-08T09:00:00+09:00
 tags: ["독서", "게임"]
 draft: false
-category: "book"
+category: "review"
 keywords: ["피, 땀, 픽셀 - 트리플 A 게임은 어떻게 만들어지는가","게임","디아블로","책 리뷰","책"]
 ---
 

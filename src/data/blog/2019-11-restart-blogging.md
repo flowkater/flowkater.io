@@ -6,7 +6,7 @@ pubDatetime: 2019-11-13T11:11:59+09:00
 updatedDatetime: 2019-11-13T11:11:59+09:00
 tags: ["에세이", "일상"]
 draft: false
-category: "daily"
+category: "essay"
 keywords: ["Gatsbyjs","Blog","블로깅","개츠비"]
 ---
 

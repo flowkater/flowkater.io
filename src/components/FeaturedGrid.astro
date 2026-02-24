@@ -1,0 +1,73 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { slugifyStr } from "@/utils/slugify";
+import { getPath } from "@/utils/getPath";
+import Datetime from "./Datetime.astro";
+import { getCategoryConfig } from "@/constants";
+import { SITE } from "@/config";
+
+export interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section id="featured" class="pt-12 pb-6">
+  <h2 class="mb-6 text-2xl font-semibold tracking-wide">Featured</h2>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    {
+      posts.map(post => {
+        const { title, description, pubDatetime, modDatetime, timezone, category, ogImage: initOgImage } = post.data;
+        const cat = getCategoryConfig(category);
+
+        // Resolve OG image URL
+        let ogSrc: string | undefined;
+        if (typeof initOgImage === "string") {
+          ogSrc = initOgImage;
+        } else if (initOgImage?.src) {
+          ogSrc = initOgImage.src;
+        }
+        if (!ogSrc && SITE.dynamicOgImage) {
+          const slug = getPath(post.id, post.filePath, false).split("/").pop();
+          ogSrc = `/og/${slug}.png`;
+        }
+
+        return (
+          <a
+            href={getPath(post.id, post.filePath)}
+            class="group overflow-hidden rounded-lg border border-border transition-colors hover:border-accent/60 hover:bg-accent/5"
+          >
+            {ogSrc && (
+              <div class="aspect-video w-full overflow-hidden bg-muted">
+                <img
+                  src={ogSrc}
+                  alt={title}
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div class="p-4">
+              {cat && (
+                <span class="text-xs font-medium opacity-70">
+                  {cat.icon} {cat.label}
+                </span>
+              )}
+              <h3
+                style={{ viewTransitionName: slugifyStr(title) }}
+                class="mt-1 text-lg font-medium text-accent decoration-dashed group-hover:underline"
+              >
+                {title}
+              </h3>
+              <p class="mt-1 line-clamp-5 text-base opacity-80">{description}</p>
+              <div class="mt-2">
+                <Datetime {pubDatetime} {modDatetime} {timezone} size="sm" />
+              </div>
+            </div>
+          </a>
+        );
+      })
+    }
+  </div>
+</section>

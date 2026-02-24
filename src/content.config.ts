@@ -9,6 +9,14 @@ const faqItemSchema = z.object({
   answer: z.string(),
 });
 
+const categoryEnum = z.enum([
+  "essay",
+  "review",
+  "fiction",
+  "retrospect",
+  "study",
+]);
+
 const blog = defineCollection({
   loader: glob({
     pattern: ["**/[^_]*.md", "**/[^_]*.mdx"],
@@ -23,6 +31,7 @@ const blog = defineCollection({
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
+      category: categoryEnum.default("essay"),
       ogImage: image().or(z.string()).optional(),
       description: z.string(),
       keywords: z.array(z.string()).optional(),

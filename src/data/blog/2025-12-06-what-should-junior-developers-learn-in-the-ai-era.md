@@ -10,6 +10,7 @@ tags:
   - "에세이"
   - "커리어"
   - "AI"
+category: "essay"
 # ogImage: "/assets/og/sample.png" # (선택) 커스텀 OG 이미지 경로. 사용하지 않으면 이 줄을 삭제하세요.
 featured: false
 draft: false

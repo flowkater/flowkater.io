@@ -6,7 +6,7 @@ pubDatetime: 2019-11-19T12:11:27+09:00
 updatedDatetime: 2019-11-19T12:11:27+09:00
 tags: ["후기", "영상", "게임"]
 draft: false
-category: "video"
+category: "review"
 keywords: ["넷플릭스","LOL","League of Legends","게임","개발","다큐멘타리"]
 ---
 

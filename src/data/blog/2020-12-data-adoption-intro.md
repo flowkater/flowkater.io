@@ -6,7 +6,7 @@ pubDatetime: 2020-12-10T18:12:59+09:00
 updatedDatetime: 2020-12-10T18:12:59+09:00
 tags: ["개발", "데이터", "데이터엔지니어링"]
 draft: false
-category: "data"
+category: "study"
 keywords: ["데이터분석","데이터엔지니어링","데이터 파이프라인","데이터 웨어하우스"]
 ---
 

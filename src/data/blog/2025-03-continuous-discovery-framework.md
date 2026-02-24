@@ -5,6 +5,7 @@ summary: "비즈니스 요구와 고객 가치가 충돌하는 순간이 있다.
 pubDatetime: 2025-03-02T09:00:00+09:00
 updatedDatetime: 2025-03-02T09:00:00+09:00
 tags: ["프로덕트", "디스커버리"]
+category: "essay"
 draft: false
 ---
 

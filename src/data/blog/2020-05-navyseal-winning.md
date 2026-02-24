@@ -6,7 +6,7 @@ pubDatetime: 2020-05-18T18:05:59+09:00
 updatedDatetime: 2020-05-18T18:05:59+09:00
 tags: ["독서", "리더십"]
 draft: false
-category: "book"
+category: "review"
 keywords: ["리더십","스타트업","경영","팀장","리더","네이비씰","운영"]
 ---
 

@@ -6,7 +6,7 @@ pubDatetime: 2013-08-27T14:54:14+09:00
 updatedDatetime: 2013-08-27T14:54:14+09:00
 tags: ["독서", "수학"]
 draft: false
-category: "book"
+category: "review"
 keywords: ["책","책 리뷰","페르마의 마지막 정리","페르마","수학","수학책"]
 ---
 

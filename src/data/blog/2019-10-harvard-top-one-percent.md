@@ -6,7 +6,7 @@ pubDatetime: 2019-10-09T12:11:23+09:00
 updatedDatetime: 2019-10-09T12:11:23+09:00
 tags: ["독서", "자기계발"]
 draft: false
-category: "book"
+category: "review"
 keywords: ["책","책 리뷰","하버드 상위1퍼센트의 비밀","하버드","부정적 신호","공부","차단","깊은 이해"]
 ---
 

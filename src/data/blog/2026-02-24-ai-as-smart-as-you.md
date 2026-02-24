@@ -4,6 +4,7 @@ description: "같은 AI를 쓰는데 왜 격차가 벌어질까? Stripe 3,000명
 summary: "Stripe는 시니어가 더 큰 가치를 얻었고, MIT는 AI를 많이 쓸수록 뇌가 약해진다는 걸 밝혔다. AI는 강한 자를 더 강하게, 약한 자를 더 약하게 만든다. 프롬프트가 아니라 인풋의 두께, 하네스 설계, 소크라틱 대화가 차이를 만든다."
 pubDatetime: 2026-02-24T15:00:00+09:00
 tags: ["에세이", "AI코딩", "생산성"]
+category: "essay"
 featured: false
 draft: true
 faq:

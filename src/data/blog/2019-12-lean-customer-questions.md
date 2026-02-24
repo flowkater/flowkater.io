@@ -6,7 +6,7 @@ pubDatetime: 2019-12-02T18:12:59+09:00
 updatedDatetime: 2019-12-02T18:12:59+09:00
 tags: ["프로덕트", "디스커버리"]
 draft: false
-category: "book"
+category: "essay"
 keywords: ["린 고객개발", "고객개발", "고객 인터뷰", "기획", "니즈파악"]
 faq:
   - question: "고객 인터뷰에서 가장 중요한 질문은 무엇인가요?"

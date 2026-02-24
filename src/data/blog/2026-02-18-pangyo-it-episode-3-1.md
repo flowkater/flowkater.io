@@ -8,6 +8,7 @@ updatedDatetime: 2026-02-18T13:00:00+09:00
 canonicalURL: "https://flowkater.io/posts/2026-02-18-pangyo-it-episode-3-1/"
 tags:
   - "소설"
+category: "fiction"
 featured: true
 draft: false
 keywords:

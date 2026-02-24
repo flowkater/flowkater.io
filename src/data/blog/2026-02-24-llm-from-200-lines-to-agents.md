@@ -4,6 +4,7 @@ description: "Karpathy의 microgpt 200줄과 ByteByteGo의 LLM 학습 원리를 
 summary: "LLM은 결국 거대한 수학 함수다. 200줄 코드로 그 본질을 이해하고, 르쿤이 지적한 4가지 한계를 에이전트 시스템이 어떻게 보완하는지, 그리고 AI를 실전에서 어떻게 써야 하는지까지."
 pubDatetime: 2026-02-24T15:00:00+09:00
 tags: ["기술", "AI", "LLM", "에이전트"]
+category: "essay"
 featured: true
 draft: true
 ---

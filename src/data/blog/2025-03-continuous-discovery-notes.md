@@ -5,6 +5,7 @@ summary: "지속적인 제품 발견의 습관 (Continuous Discovery Habits Disc
 pubDatetime: 2025-03-01T09:00:00+09:00
 updatedDatetime: 2025-03-01T09:00:00+09:00
 tags: ["프로덕트", "디스커버리"]
+category: "study"
 draft: false
 ---
 

@@ -5,6 +5,7 @@ summary: "모든 제품 팀은 결국 두 가지 일을 한다. 무엇을 만들
 pubDatetime: 2025-03-01T09:00:00+09:00
 updatedDatetime: 2025-03-01T09:00:00+09:00
 tags: ["프로덕트", "디스커버리"]
+category: "essay"
 draft: false
 ---
 

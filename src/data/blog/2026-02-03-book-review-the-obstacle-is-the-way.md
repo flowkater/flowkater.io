@@ -5,6 +5,7 @@ summary: "새해를 맞아 정신 무장을 위해 '돌파력'을 읽었다. 쉬
 pubDatetime: 2026-02-03T10:00:00+09:00
 updatedDatetime: 2026-02-03T10:00:00+09:00
 tags: ["독서", "에세이", "릿미릿미"]
+category: "review"
 draft: false
 keywords:
   [

@@ -5,19 +5,25 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
-import Card from "@/components/Card.astro";
+import FeaturedGrid from "@/components/FeaturedGrid.astro";
+import CategorySection from "@/components/CategorySection.astro";
 import Hr from "@/components/Hr.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
+import getPostsByCategory from "@/utils/getPostsByCategory";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
+import { SOCIALS, CATEGORIES } from "@/constants";
 
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+
+const categoryPosts = CATEGORIES.map(cat => ({
+  category: cat,
+  posts: getPostsByCategory(posts, cat.slug),
+})).filter(({ posts }) => posts.length > 0);
 
 const pageSummary =
   "창업과 CTO, 그리고 다시 시작하는 프로젝트를 기록하는 공간입니다. 회고와 실험, 기술 노트와 개인적인 배움을 흐트러지지 않게 담아두려 합니다.";
@@ -51,7 +57,7 @@ const pageSummary =
       </a>
 
       <p>
-        지나간 시간을 잠시나마 붙들고자 쓰는 회고록과 문뜩문뜩 떠오르는 잡생각들을 낙서하는 공간입니다. 
+        지나간 시간을 잠시나마 붙들고자 쓰는 회고록과 문뜩문뜩 떠오르는 잡생각들을 낙서하는 공간입니다.
         12년부터 개발자로 일하면서 2개의 작은 스타트업에서 공동 창업자로 일했고, 1개의 스타트업에서 대표로 일하다 또 다른 회사로 이직하여 개발자1로, 또 다시 이직하여 CTO로 일하면서 개발 조직을 빌딩하고 비지니스와 팀의 흥망성쇠를 겪으며 살아왔습니다.
         지금은 다시 자유인이 되어 소울 메이트이자 반려자인 Ellie 와 다시 새로운 프로젝트를 준비 중입니다.
         게으르지만 일을 잘할만큼 똑똑합니다. 사람을 좋아해서 팀으로 일하는 걸 좋아하지만 같은 이유로 멍청해지기도 합니다.
@@ -72,29 +78,20 @@ const pageSummary =
     {
       featuredPosts.length > 0 && (
         <>
-          <section id="featured" class="pt-12 pb-6">
-            <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-            <ul>
-              {featuredPosts.map(data => (
-                <Card variant="h3" {...data} />
-              ))}
-            </ul>
-          </section>
-          {recentPosts.length > 0 && <Hr />}
+          <FeaturedGrid posts={featuredPosts} />
+          {categoryPosts.length > 0 && <Hr />}
         </>
       )
     }
 
     {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
+      categoryPosts.length > 0 && (
+        <section id="categories" class="pt-12 pb-6">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+            {categoryPosts.map(({ category, posts }) => (
+              <CategorySection {category} {posts} />
+            ))}
+          </div>
         </section>
       )
     }

@@ -8,6 +8,7 @@ updatedDatetime: 2026-01-25T21:54:11+09:00
 canonicalURL: "https://flowkater.io/posts/2026-01-25-pangyo-it-episode-2/"
 tags:
   - "소설"
+category: "fiction"
 featured: false
 draft: false
 keywords:

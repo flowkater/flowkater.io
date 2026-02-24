@@ -6,7 +6,7 @@ pubDatetime: 2019-12-14T16:12:59+09:00
 updatedDatetime: 2019-12-14T16:12:59+09:00
 tags: ["독서", "금융", "AI"]
 draft: false
-category: "book"
+category: "review"
 keywords: ["퀀트","quant","인공지능","주식 투자","금융 공학","로보어드바이저","비트코인","ai","주식봇"]
 ---
 

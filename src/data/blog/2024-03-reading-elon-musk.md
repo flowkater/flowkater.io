@@ -7,7 +7,7 @@ updatedDatetime: 2024-03-13T21:13:59+09:00
 tags: ["독서", "리더십", "경영"]
 draft: false
 keywords: ["리더십","스타트업","경영","리더","일론머스크","테슬라","스페이스x","트위터","디테일","제1원칙"]
-category: "book"
+category: "review"
 ---
 
 ![elonmusk|400](https://i.imgur.com/5EVvigV.jpeg)

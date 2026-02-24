@@ -5,6 +5,7 @@ summary: "Claude Code에 Superpowers를 설치하면 바로 코딩부터 하던 
 pubDatetime: 2026-02-08T10:00:00+09:00
 updatedDatetime: 2026-02-08T10:00:00+09:00
 tags: ["기술", "바이브코딩", "AI코딩", "개발"]
+category: "study"
 featured: true
 draft: false
 ogImage: ../../assets/blog/superpowers.png

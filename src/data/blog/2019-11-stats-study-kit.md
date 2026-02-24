@@ -6,7 +6,7 @@ pubDatetime: 2019-11-19T19:11:59+09:00
 updatedDatetime: 2019-11-19T19:11:59+09:00
 tags: ["개발", "데이터", "통계학"]
 draft: false
-category: "data"
+category: "study"
 featured: true
 keywords: ["데이터분석", "통계학입문", "통계학 책 추천", "통계학 스터디"]
 ---
