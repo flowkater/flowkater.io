@@ -9,7 +9,7 @@ canonicalURL: "https://flowkater.io/posts/2026-02-18-pangyo-it-episode-3-1/"
 tags:
   - "소설"
 category: "fiction"
-featured: true
+featured: false
 draft: false
 keywords:
   - "IT 대기업"
