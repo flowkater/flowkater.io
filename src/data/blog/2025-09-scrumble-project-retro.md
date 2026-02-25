@@ -229,6 +229,6 @@ _기술 회고에서 계속_
 ---
 
 - 이전 회고
-  - [4년간의 IHFB 회고](https://flowkater.io/Blog/retrospect/4%EB%85%84%EA%B0%84%EC%9D%98+IHFB+%ED%9A%8C%EA%B3%A0)
+  - [4년간의 IHFB 회고](https://flowkater.io/posts/2025-04-ihfb-four-year-retro)
 - 다음 회고
   - [Scrumble 기술 회고 (부제 - 풀스택 개발과 바이브 코딩의 실패. Golang 과 Nextjs) - 0. 들어가며](/posts/2025-09-scrumble-tech-retro-intro)
