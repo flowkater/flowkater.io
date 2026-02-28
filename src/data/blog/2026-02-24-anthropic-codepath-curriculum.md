@@ -2,7 +2,7 @@
 title: "세계 최대의 AI 기업은 차세대 엔지니어를 어떻게 교육하는가 — Anthropic x CodePath 커리큘럼 리뷰"
 description: "Anthropic과 CodePath가 만든 AI Engineering 커리큘럼을 주차별로 분석한다. AI가 코드를 다 짜주는 시대에도 기초와 비판적 코드 읽기가 왜 핵심인지, 커리큘럼에서 도출한 AI Native Engineer 인재상과 내 멘토링 경험을 함께 풀어본다."
 summary: "Claude Code를 만든 Anthropic이 정작 가르치는 건 Claude Code를 의심하는 법이다. 3단계 30주 커리큘럼을 뜯어보면 'AI가 짠 코드에서 버그를 찾아라'가 첫 과제이고, 마지막은 실제 오픈소스 PR이다. 비판적 코드 평가, 대규모 코드베이스 이해, 프로덕션 관심사, 실전 기여 — 이 4가지가 Anthropic이 바라보는 AI Native Engineer의 조건이다. 앤드류 응의 2026년 Stanford 강연과 교차하며, AI 시대 엔지니어에게 진짜 필요한 것이 무엇인지 파고든다."
-pubDatetime: 2026-02-24T14:00:00+09:00
+pubDatetime: 2026-03-05T14:00:00+09:00
 tags: ["AI코딩", "에세이", "교육", "커리어"]
 category: "essay"
 featured: false

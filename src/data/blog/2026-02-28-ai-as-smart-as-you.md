@@ -2,11 +2,11 @@
 title: "AI는 당신만큼만 똑똑하다"
 description: "같은 AI를 쓰는데 왜 격차가 벌어질까? Stripe 3,000명 데이터, MIT 뇌파 연구가 가리키는 답. 결국 AI의 아웃풋은 당신의 인풋으로 결정된다."
 summary: "Stripe는 시니어가 더 큰 가치를 얻었고, MIT는 AI를 많이 쓸수록 뇌가 약해진다는 걸 밝혔다. AI는 강한 자를 더 강하게, 약한 자를 더 약하게 만든다. 프롬프트가 아니라 인풋의 두께, 도메인 전문성, 그리고 AI에게 답을 구하지 않는 자세가 차이를 만든다."
-pubDatetime: 2026-02-24T15:00:00+09:00
+pubDatetime: 2026-02-28T15:00:00+09:00
 tags: ["에세이", "AI코딩", "생산성"]
 category: "essay"
 featured: false
-draft: true
+draft: false
 faq:
   - question: "AI를 쓰면 시니어가 더 유리한가요?"
     answer: "Stripe 3,000명 데이터에 따르면 그렇습니다. 경험이 많은 엔지니어가 AI에서 더 큰 가치를 얻었습니다. AI는 기존 전문성을 증폭시키는 도구이기 때문입니다."
